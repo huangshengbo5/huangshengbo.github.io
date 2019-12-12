@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>我的第一篇博客 // My New Hugo Site</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.59.1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://www.huangshengbo.com/css/main.min.f90f5edd436ec7b74ad05479a05705770306911f721193e7845948fb07fe1335.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="我的第一篇博客"/>
+<meta name="twitter:description" content="部署我的服务器流程  首先在GitHub上注册我的账号名称：huangshengbo5 接着建造我的第一项目：http://huangshengbo.github.io/ 项目建造完以后，点击设置（setting) ,跳转界面后，看到GitHubPages界面下的ChangeTheme按钮，点击进去可以选择自己中意的网页面板。 最重要的来了，就是将自己的域名和当前的GitHub工程联系在一起。首先需要在namesiol里注册账号(www.namesoil.com),然后直接选择输入自己想要的域名，一般是自己名字的英文翻译。庆幸 huangshengbo.com 这个域名还在。 接着上一步说，在我们在购买完属于自己的域名以后，在namesoil页面中点击domain manager 按钮，跳转界面后点击自己的域名按钮，选择DNS Records 左侧的Update 按钮，再次跳转界面后，在页面的中部可以看到自己域名的一些信息，选择Edit按钮，可以在Target Hostname中填写自己在GitHub中已经建好的工程名称。点击Submit按钮，就可以将自己的工程重定向到自己的域名中。  如何将本地的工程加载到GitHub上  首先需要去 https://git-scm.com 网站上下载最新的Git插件，下载好后安装运行。 如果是先在GitHub上建造了一个新的仓库，就会直接出一个界面需要你将一个本地的工程文件重定向到当前创建的GitHub库中。 实例代码：
+git remote add origin https://github.com/huangshengbo5/Test.git git push -u origin master  在自己建立的本地目录下邮件可以看到GitBaskHere选项，点击会弹出一个命令行窗口，将上面的实例代码拷贝到命令行中，点击回车就将本地的目录重定向到自己的GitHub仓库中了。
+  如何添加环境变量  这是Hugo的下载地址 https://github.com/gohugoio/hugo/releases 我的电脑是windows64位，所有我下载了 hugo_0.59.1_Windows-64bit.zip 版本。 我现在的需求是将 hugo 这个变量加到电脑的环境变量中。 首先右击我的电脑，点击属性，点击右侧的高级系统设置，点击弹窗下面的环境变量，点击下面的系统变量的新建按钮，在 Name 一栏中填写自己想要的变量名称，我起的是 hugo ,下面的 path 路径设置为当前下载的 Hugo.exe 可执行文件的目录的路径，点击确定。 最后还要在上述的环境变量的 path 变量中添加 Hugo.exe 可执行文件的目录的路径，方法是将文件目录路径加到 path 变量的前面，并且用 ; 分开。点击确定，就完成了。 hohugo
+使用Hugo搭建静态网页 cmd 命令： hugo new site myblog myblog :我的目录名称"/>
+
+    <meta property="og:title" content="我的第一篇博客" />
+<meta property="og:description" content="部署我的服务器流程  首先在GitHub上注册我的账号名称：huangshengbo5 接着建造我的第一项目：http://huangshengbo.github.io/ 项目建造完以后，点击设置（setting) ,跳转界面后，看到GitHubPages界面下的ChangeTheme按钮，点击进去可以选择自己中意的网页面板。 最重要的来了，就是将自己的域名和当前的GitHub工程联系在一起。首先需要在namesiol里注册账号(www.namesoil.com),然后直接选择输入自己想要的域名，一般是自己名字的英文翻译。庆幸 huangshengbo.com 这个域名还在。 接着上一步说，在我们在购买完属于自己的域名以后，在namesoil页面中点击domain manager 按钮，跳转界面后点击自己的域名按钮，选择DNS Records 左侧的Update 按钮，再次跳转界面后，在页面的中部可以看到自己域名的一些信息，选择Edit按钮，可以在Target Hostname中填写自己在GitHub中已经建好的工程名称。点击Submit按钮，就可以将自己的工程重定向到自己的域名中。  如何将本地的工程加载到GitHub上  首先需要去 https://git-scm.com 网站上下载最新的Git插件，下载好后安装运行。 如果是先在GitHub上建造了一个新的仓库，就会直接出一个界面需要你将一个本地的工程文件重定向到当前创建的GitHub库中。 实例代码：
+git remote add origin https://github.com/huangshengbo5/Test.git git push -u origin master  在自己建立的本地目录下邮件可以看到GitBaskHere选项，点击会弹出一个命令行窗口，将上面的实例代码拷贝到命令行中，点击回车就将本地的目录重定向到自己的GitHub仓库中了。
+  如何添加环境变量  这是Hugo的下载地址 https://github.com/gohugoio/hugo/releases 我的电脑是windows64位，所有我下载了 hugo_0.59.1_Windows-64bit.zip 版本。 我现在的需求是将 hugo 这个变量加到电脑的环境变量中。 首先右击我的电脑，点击属性，点击右侧的高级系统设置，点击弹窗下面的环境变量，点击下面的系统变量的新建按钮，在 Name 一栏中填写自己想要的变量名称，我起的是 hugo ,下面的 path 路径设置为当前下载的 Hugo.exe 可执行文件的目录的路径，点击确定。 最后还要在上述的环境变量的 path 变量中添加 Hugo.exe 可执行文件的目录的路径，方法是将文件目录路径加到 path 变量的前面，并且用 ; 分开。点击确定，就完成了。 hohugo
+使用Hugo搭建静态网页 cmd 命令： hugo new site myblog myblog :我的目录名称" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.huangshengbo.com/2019/11/06/hello-world/" />
+<meta property="article:published_time" content="2019-11-05T19:57:11+08:00" />
+<meta property="article:modified_time" content="2019-11-05T19:57:11+08:00" />
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://www.huangshengbo.com"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
+      <h1>My New Hugo Site</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
+      <div class="app-header-social">
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">我的第一篇博客</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Nov 5, 2019
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      
+
+<hr />
+
+<h2 id="部署我的服务器流程">部署我的服务器流程</h2>
+
+<ol>
+<li>首先在GitHub上注册我的账号名称：huangshengbo5</li>
+<li>接着建造我的第一项目：<a href="http://huangshengbo.github.io/">http://huangshengbo.github.io/</a></li>
+<li>项目建造完以后，点击设置（setting) ,跳转界面后，看到GitHubPages界面下的ChangeTheme按钮，点击进去可以选择自己中意的网页面板。</li>
+<li>最重要的来了，就是将自己的域名和当前的GitHub工程联系在一起。首先需要在namesiol里注册账号(www.namesoil.com),然后直接选择输入自己想要的域名，一般是自己名字的英文翻译。庆幸 huangshengbo.com 这个域名还在。</li>
+<li>接着上一步说，在我们在购买完属于自己的域名以后，在namesoil页面中点击domain manager 按钮，跳转界面后点击自己的域名按钮，选择DNS Records 左侧的Update 按钮，再次跳转界面后，在页面的中部可以看到自己域名的一些信息，选择Edit按钮，可以在Target Hostname中填写自己在GitHub中已经建好的工程名称。点击Submit按钮，就可以将自己的工程重定向到自己的域名中。</li>
+</ol>
+
+<h2 id="如何将本地的工程加载到github上">如何将本地的工程加载到GitHub上</h2>
+
+<ol>
+<li>首先需要去  <a href="https://git-scm.com">https://git-scm.com</a> 网站上下载最新的Git插件，下载好后安装运行。</li>
+
+<li><p>如果是先在GitHub上建造了一个新的仓库，就会直接出一个界面需要你将一个本地的工程文件重定向到当前创建的GitHub库中。
+实例代码：</p>
+
+<pre><code>git remote add origin https://github.com/huangshengbo5/Test.git
+git push -u origin master
+</code></pre></li>
+
+<li><p>在自己建立的本地目录下邮件可以看到GitBaskHere选项，点击会弹出一个命令行窗口，将上面的实例代码拷贝到命令行中，点击回车就将本地的目录重定向到自己的GitHub仓库中了。</p></li>
+</ol>
+
+<h2 id="如何添加环境变量">如何添加环境变量</h2>
+
+<ol>
+<li>这是Hugo的下载地址  <a href="https://github.com/gohugoio/hugo/releases">https://github.com/gohugoio/hugo/releases</a>   我的电脑是windows64位，所有我下载了  hugo_0.59.1_Windows-64bit.zip   版本。</li>
+<li>我现在的需求是将 hugo 这个变量加到电脑的环境变量中。</li>
+<li>首先右击我的电脑，点击属性，点击右侧的高级系统设置，点击弹窗下面的环境变量，点击下面的系统变量的新建按钮，在 Name 一栏中填写自己想要的变量名称，我起的是  hugo  ,下面的  path 路径设置为当前下载的 Hugo.exe 可执行文件的目录的路径，点击确定。</li>
+
+<li><h2 id="最后还要在上述的环境变量的-path-变量中添加-hugo-exe-可执行文件的目录的路径-方法是将文件目录路径加到-path-变量的前面-并且用-分开-点击确定-就完成了">最后还要在上述的环境变量的 path 变量中添加 Hugo.exe 可执行文件的目录的路径，方法是将文件目录路径加到 path 变量的前面，并且用 ; 分开。点击确定，就完成了。</h2>
+
+<p>hohugo</p>
+
+<h2 id="使用hugo搭建静态网页">使用Hugo搭建静态网页</h2></li>
+
+<li><p>cmd 命令：  hugo new site myblog   myblog :我的目录名称</p></li>
+
+<li><p>可以下载一个Theme主题：  git submodule add <a href="https://github.com/budparr/gohugo-theme-ananke.git">https://github.com/budparr/gohugo-theme-ananke.git</a> themes/ananke;</p></li>
+
+<li><p>hugo new site blog :我的一篇博客名称。</p></li>
+
+<li><p>可以直接建立本地的Http服务器： hugo server -t ananke &ndash;buildDrafts</p></li>
+
+<li><p>设置本地的baseUrl:hugo &ndash;baseUrl=&ldquo;<a href="https://huangshengbo.com">https://huangshengbo.com</a></p></li>
+
+<li><p>在第六步后会在本地的mublog文件夹下创建一个publish的文件夹。</p></li>
+
+<li><p>在新的publish文件下操作。将博客关联到GitHub上：git remote add origin <a href="http://github.com/huangshengbo5/huangshengbo5.github.io.git">http://github.com/huangshengbo5/huangshengbo5.github.io.git</a></p></li>
+
+<li><p>如果想要重新生成一个Public（静态网页设置）直接在Public父目录中使用Git 执行</p>
+
+<pre><code>hugo
+
+</code></pre></li>
+</ol>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
