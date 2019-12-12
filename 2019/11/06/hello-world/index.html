@@ -116,11 +116,16 @@ git push -u origin master
 
 <li><p>在新的publish文件下操作。将博客关联到GitHub上：git remote add origin <a href="http://github.com/huangshengbo5/huangshengbo5.github.io.git">http://github.com/huangshengbo5/huangshengbo5.github.io.git</a></p></li>
 
-<li><p>如果想要重新生成一个Public（静态网页设置）直接在Public父目录中使用Git 执行</p>
+<li><p>如果想要重新生成Public（静态网页设置）直接在Public父目录中使用Git 执行</p>
 
 <pre><code>hugo
-
 </code></pre></li>
+
+<li><p>每次在本地执行Git后会进入Vim编辑器中，这时点击 i  可以进入编辑器模式，点击 esc 可以退出编辑器模式，进入命令行模式，点击shift+: 接着输入w q 就可以退出vim编辑器。此时的vim编辑器只是让你可以给该次的提交添加一下log。</p></li>
+
+<li><p>cd .. 去上一层目录</p></li>
+
+<li><p>在每一篇的文章中最好不要有draft : true 标记，这表明该文章是一篇草稿。在生成的静态网页中，无法被看到。</p></li>
 </ol>
 
     </div>
