@@ -61,7 +61,7 @@ git remote add origin https://github.com/huangshengbo5/Test.git git push -u orig
   "headline": "使用Hugo搭建静态网页",
   "description" : "部署我的服务器流程  首先在GitHub上注册我的账号名称：huangshengbo5 接着建造我的第一项目：http:\/\/huangshengbo.github.io\/ 项目建造完以后，点击设置（setting) ,跳转界面后，看到GitHubPages界面下的ChangeTheme按钮，点击进去可以选择自己中意的网页面板。 最重要的来了，就是将自己的域名和当前的GitHub工程联系在一起。首先需要在namesiol里注册账号(www.namesoil.com),然后直接选择输入自己想要的域名，一般是自己名字的英文翻译。庆幸 huangshengbo.com 这个域名还在。 接着上一步说，在我们在购买完属于自己的域名以后，在namesoil页面中点击domain manager 按钮，跳转界面后点击自己的域名按钮，选择DNS Records 左侧的Update 按钮，再次跳转界面后，在页面的中部可以看到自己域名的一些信息，选择Edit按钮，可以在Target Hostname中填写自己在GitHub中已经建好的工程名称。点击Submit按钮，就可以将自己的工程重定向到自己的域名中。  如何将本地的工程加载到GitHub上  首先需要去 https:\/\/git-scm.com 网站上下载最新的Git插件，下载好后安装运行。 如果是先在GitHub上建造了一个新的仓库，就会直接出一个界面需要你将一个本地的工程文件重定向到当前创建的GitHub库中。 实例代码：\ngit remote add origin https:\/\/github.com\/huangshengbo5\/Test.git git push -u origin master 在自己建立的本地目录下邮件可以看到GitBaskHere选项，点击会弹出一个命令行窗口，将上面的实例代码拷贝到命令行中，点击回车就将本地的目录重定向到自己的GitHub仓库中了。\n  如何添加环境变量  这是Hugo的下载地址 https:\/\/github.com\/gohugoio\/hugo\/releases 我的电脑是windows64位，所有我下载了 hugo_0.59.1_Windows-64bit.zip 版本。 我现在的需求是将 hugo 这个变量加到电脑的环境变量中。 首先右击我的电脑，点击属性，点击右侧的高级系统设置，点击弹窗下面的环境变量，点击下面的系统变量的新建按钮，在 Name 一栏中填写自己想要的变量名称，我起的是 hugo ,下面的 path 路径设置为当前下载的 Hugo.exe 可执行文件的目录的路径，点击确定。 最后还要在上述的环境变量的 path 变量中添加 Hugo.exe 可执行文件的目录的路径，方法是将文件目录路径加到 path 变量的前面，并且用 ; 分开。点击确定，就完成了。  使用Hugo搭建静态网页  cmd 命令： hugo new site myblog myblog :我的目录名称 可以下载一个Theme主题： git submodule add https:\/\/github.",
   "inLanguage" : "en",
-  "wordCount":  161 ,
+  "wordCount":  111 ,
   "datePublished" : "2019-11-05T19:57:11",
   "dateModified" : "2019-11-05T19:57:11",
   "image" : "https:\/\/www.huangshengbo.com\/img\/avatar-icon.png",
@@ -258,7 +258,7 @@ git remote add origin https://github.com/huangshengbo5/Test.git git push -u orig
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;161&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;111&nbsp;words
   
   
     
@@ -339,10 +339,6 @@ git push -u origin master</pre></div></li>
 
 <li><p>在每一篇的文章中最好不要有draft : true 标记，这表明该文章是一篇草稿。在生成的静态网页中，无法被看到。</p></li>
 </ol>
-
-<p>C:\Program Files\Git;D:\Downloads\hugo_0.59.1_Windows-64bit;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\Xoreax\IncrediBuild;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files\Microsoft VS Code\bin</p>
-
-<p>C:\Program Files\Git;D:\Downloads\hugo_0.59.1_Windows-64bit;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\Xoreax\IncrediBuild;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files\Microsoft VS Code\bin</p>
 
 
         
