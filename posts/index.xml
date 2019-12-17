@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on 黄圣博的博客</title>
+    <link>https://www.huangshengbo.com/posts/</link>
+    <description>Recent content in Posts on 黄圣博的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>m15136737050@163.com (黄圣博)</managingEditor>
+    <webMaster>m15136737050@163.com (黄圣博)</webMaster>
+    <lastBuildDate>Thu, 12 Dec 2019 17:08:52 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.huangshengbo.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mask裁剪UI粒子特效</title>
+      <link>https://www.huangshengbo.com/2019/12/12/learnrecord/</link>
+      <pubDate>Thu, 12 Dec 2019 17:08:52 +0800</pubDate>
+      <author>m15136737050@163.com (黄圣博)</author>
+      <guid>https://www.huangshengbo.com/2019/12/12/learnrecord/</guid>
+      <description>最近在项目遇到一个问题，加上最近刚看完 Shader 入门到精通 ，所有借此来研究一下这个问题。
+核心原理 GPU 每次刷新屏幕时，会重新计算物体上的 Shader 中的顶点着色器和片面着色器，然后输出计算结果并显示到屏幕上。在计算片面着色器时，需要将材质的顶点的世界坐标和 Mask 裁剪区域的边界进行比对，判断该顶点是否在裁剪区域内，如果不是就将该顶点的透明通道设为零。
+实现方式 也有类似的实现方案，这里给出我参考的两个链接：
+https://www.cnblogs.com/devgl/p/6598781.html
+https://www.xuanyusong.com/archives/3518
+首先附上 Shader 代码，其中 add 注释下的是改动的代码。
+// Unity built-in shader source. Copyright (c) 2016 Unity Technologies. MIT license (see license.txt) Shader &amp;#34;Particles/Additive&amp;#34; { Properties { _TintColor (&amp;#34;Tint Color&amp;#34;, Color) = (0.5,0.5,0.5,0.5) _MainTex (&amp;#34;Particle Texture&amp;#34;, 2D) = &amp;#34;white&amp;#34; {} _InvFade (&amp;#34;Soft Particles Factor&amp;#34;, Range(0.01,3.0)) = 1.0 //add _ClipRect(&amp;#34;ClipRect&amp;#34;,Vector) = (0,0,0,0) [Toggle(UNITY_UI_ALPHACLIP)] _UseUIAlphaClip (&amp;#34;Use Alpha Clip&amp;#34;, Float) = 1 //add } Category { Tags { &amp;#34;Queue&amp;#34;=&amp;#34;Transparent&amp;#34; &amp;#34;IgnoreProjector&amp;#34;=&amp;#34;True&amp;#34; &amp;#34;RenderType&amp;#34;=&amp;#34;Transparent&amp;#34; &amp;#34;PreviewType&amp;#34;=&amp;#34;Plane&amp;#34; } Blend SrcAlpha One ColorMask RGB Cull Off Lighting Off ZWrite Off SubShader { Pass { CGPROGRAM #pragma vertex vert #pragma fragment frag #pragma target 2.</description>
+    </item>
+    
+  </channel>
+</rss>

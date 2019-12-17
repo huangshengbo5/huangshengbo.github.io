@@ -3,17 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.huangshengbo.com/2019/12/12/learnrecord/</loc>
+    <lastmod>2019-12-12T17:08:52+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.huangshengbo.com/posts/</loc>
+    <lastmod>2019-12-12T17:08:52+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.huangshengbo.com/</loc>
+    <lastmod>2019-12-12T17:08:52+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.huangshengbo.com/post/</loc>
     <lastmod>2019-11-05T19:57:11+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.huangshengbo.com/2019/11/06/hello-world/</loc>
-    <lastmod>2019-11-05T19:57:11+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.huangshengbo.com/</loc>
     <lastmod>2019-11-05T19:57:11+08:00</lastmod>
   </url>
   

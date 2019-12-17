@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Mask裁剪UI粒子特效 - 黄圣博的博客</title>
+  <meta name="description" content="最近在项目遇到一个问题，加上最近刚看完 Shader 入门到精通 ，所有借此来研究一下这个问题。
+核心原理 GPU 每次刷新屏幕时，会重新计算物体上的 Shader 中的顶点着色器和片面着色器，然后输出计算结果并显示到屏幕上。在计算片面着色器时，需要将材质的顶点的世界坐标和 Mask 裁剪区域的边界进行比对，判断该顶点是否在裁剪区域内，如果不是就将该顶点的透明通道设为零。
+实现方式 也有类似的实现方案，这里给出我参考的两个链接：
+https://www.cnblogs.com/devgl/p/6598781.html
+https://www.xuanyusong.com/archives/3518
+首先附上 Shader 代码，其中 add 注释下的是改动的代码。
+// Unity built-in shader source. Copyright (c) 2016 Unity Technologies. MIT license (see license.txt) Shader &#34;Particles/Additive&#34; { Properties { _TintColor (&#34;Tint Color&#34;, Color) = (0.5,0.5,0.5,0.5) _MainTex (&#34;Particle Texture&#34;, 2D) = &#34;white&#34; {} _InvFade (&#34;Soft Particles Factor&#34;, Range(0.01,3.0)) = 1.0 //add _ClipRect(&#34;ClipRect&#34;,Vector) = (0,0,0,0) [Toggle(UNITY_UI_ALPHACLIP)] _UseUIAlphaClip (&#34;Use Alpha Clip&#34;, Float) = 1 //add } Category { Tags { &#34;Queue&#34;=&#34;Transparent&#34; &#34;IgnoreProjector&#34;=&#34;True&#34; &#34;RenderType&#34;=&#34;Transparent&#34; &#34;PreviewType&#34;=&#34;Plane&#34; } Blend SrcAlpha One ColorMask RGB Cull Off Lighting Off ZWrite Off SubShader { Pass { CGPROGRAM #pragma vertex vert #pragma fragment frag #pragma target 2.">
+  <meta name="author" content="黄圣博"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "黄圣博的博客",
+    
+    "url": "https:\/\/www.huangshengbo.com"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/www.huangshengbo.com"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/www.huangshengbo.com",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/www.huangshengbo.com\/2019\/12\/12\/learnrecord\/",
+          "name": "Mask裁剪 u i粒子特效"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "黄圣博"
+  },
+  "headline": "Mask裁剪UI粒子特效",
+  "description" : "最近在项目遇到一个问题，加上最近刚看完 Shader 入门到精通 ，所有借此来研究一下这个问题。\n核心原理 GPU 每次刷新屏幕时，会重新计算物体上的 Shader 中的顶点着色器和片面着色器，然后输出计算结果并显示到屏幕上。在计算片面着色器时，需要将材质的顶点的世界坐标和 Mask 裁剪区域的边界进行比对，判断该顶点是否在裁剪区域内，如果不是就将该顶点的透明通道设为零。\n实现方式 也有类似的实现方案，这里给出我参考的两个链接：\nhttps:\/\/www.cnblogs.com\/devgl\/p\/6598781.html\nhttps:\/\/www.xuanyusong.com\/archives\/3518\n首先附上 Shader 代码，其中 add 注释下的是改动的代码。\n\/\/ Unity built-in shader source. Copyright (c) 2016 Unity Technologies. MIT license (see license.txt) Shader \x26#34;Particles\/Additive\x26#34; { Properties { _TintColor (\x26#34;Tint Color\x26#34;, Color) = (0.5,0.5,0.5,0.5) _MainTex (\x26#34;Particle Texture\x26#34;, 2D) = \x26#34;white\x26#34; {} _InvFade (\x26#34;Soft Particles Factor\x26#34;, Range(0.01,3.0)) = 1.0 \/\/add _ClipRect(\x26#34;ClipRect\x26#34;,Vector) = (0,0,0,0) [Toggle(UNITY_UI_ALPHACLIP)] _UseUIAlphaClip (\x26#34;Use Alpha Clip\x26#34;, Float) = 1 \/\/add } Category { Tags { \x26#34;Queue\x26#34;=\x26#34;Transparent\x26#34; \x26#34;IgnoreProjector\x26#34;=\x26#34;True\x26#34; \x26#34;RenderType\x26#34;=\x26#34;Transparent\x26#34; \x26#34;PreviewType\x26#34;=\x26#34;Plane\x26#34; } Blend SrcAlpha One ColorMask RGB Cull Off Lighting Off ZWrite Off SubShader { Pass { CGPROGRAM #pragma vertex vert #pragma fragment frag #pragma target 2.",
+  "inLanguage" : "en",
+  "wordCount":  355 ,
+  "datePublished" : "2019-12-12T17:08:52",
+  "dateModified" : "2019-12-12T17:08:52",
+  "image" : "https:\/\/www.huangshengbo.com\/img\/avatar-icon.png",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "https:\/\/www.huangshengbo.com\/2019\/12\/12\/learnrecord\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/www.huangshengbo.com",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/www.huangshengbo.com\/img\/avatar-icon.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Mask裁剪UI粒子特效" />
+<meta property="og:description" content="最近在项目遇到一个问题，加上最近刚看完 Shader 入门到精通 ，所有借此来研究一下这个问题。
+核心原理 GPU 每次刷新屏幕时，会重新计算物体上的 Shader 中的顶点着色器和片面着色器，然后输出计算结果并显示到屏幕上。在计算片面着色器时，需要将材质的顶点的世界坐标和 Mask 裁剪区域的边界进行比对，判断该顶点是否在裁剪区域内，如果不是就将该顶点的透明通道设为零。
+实现方式 也有类似的实现方案，这里给出我参考的两个链接：
+https://www.cnblogs.com/devgl/p/6598781.html
+https://www.xuanyusong.com/archives/3518
+首先附上 Shader 代码，其中 add 注释下的是改动的代码。
+// Unity built-in shader source. Copyright (c) 2016 Unity Technologies. MIT license (see license.txt) Shader &#34;Particles/Additive&#34; { Properties { _TintColor (&#34;Tint Color&#34;, Color) = (0.5,0.5,0.5,0.5) _MainTex (&#34;Particle Texture&#34;, 2D) = &#34;white&#34; {} _InvFade (&#34;Soft Particles Factor&#34;, Range(0.01,3.0)) = 1.0 //add _ClipRect(&#34;ClipRect&#34;,Vector) = (0,0,0,0) [Toggle(UNITY_UI_ALPHACLIP)] _UseUIAlphaClip (&#34;Use Alpha Clip&#34;, Float) = 1 //add } Category { Tags { &#34;Queue&#34;=&#34;Transparent&#34; &#34;IgnoreProjector&#34;=&#34;True&#34; &#34;RenderType&#34;=&#34;Transparent&#34; &#34;PreviewType&#34;=&#34;Plane&#34; } Blend SrcAlpha One ColorMask RGB Cull Off Lighting Off ZWrite Off SubShader { Pass { CGPROGRAM #pragma vertex vert #pragma fragment frag #pragma target 2.">
+<meta property="og:image" content="https://www.huangshengbo.com/img/avatar-icon.png" />
+<meta property="og:url" content="https://www.huangshengbo.com/2019/12/12/learnrecord/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="黄圣博的博客" />
+
+  <meta name="twitter:title" content="Mask裁剪UI粒子特效" />
+  <meta name="twitter:description" content="最近在项目遇到一个问题，加上最近刚看完 Shader 入门到精通 ，所有借此来研究一下这个问题。
+核心原理 GPU 每次刷新屏幕时，会重新计算物体上的 Shader 中的顶点着色器和片面着色器，然后输出计算结果并显示到屏幕上。在计算片面着色器时，需要将材质的顶点的世界坐标和 Mask 裁剪区域的边界进行比对，判断该顶点是否在裁剪区域内，如果不是就将该顶点的透明通道设为零。
+实现方式 也有类似的实现 …">
+  <meta name="twitter:image" content="https://www.huangshengbo.com/img/avatar-icon.png" />
+  <meta name="twitter:card" content="summary" />
+  <link href='https://www.huangshengbo.com/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta name="generator" content="Hugo 0.59.1" />
+  <link rel="alternate" href="https://www.huangshengbo.com/index.xml" type="application/rss+xml" title="黄圣博的博客"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://www.huangshengbo.com/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://www.huangshengbo.com/css/highlight.min.css" /><link rel="stylesheet" href="https://www.huangshengbo.com/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://www.huangshengbo.com">黄圣博的博客</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="/">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="/post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="/post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="/post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="黄圣博的博客" href="https://www.huangshengbo.com">
+            <img class="avatar-img" src="https://www.huangshengbo.com/img/avatar-icon.png" alt="黄圣博的博客" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="posts-heading">
+              
+                <h1>Mask裁剪UI粒子特效</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p>最近在项目遇到一个问题，加上最近刚看完  <em><u>Shader 入门到精通</u></em> ，所有借此来研究一下这个问题。</p>
+
+<h3 id="核心原理">核心原理</h3>
+
+<p>GPU 每次刷新屏幕时，会重新计算物体上的 Shader 中的顶点着色器和片面着色器，然后输出计算结果并显示到屏幕上。在计算片面着色器时，需要将材质的顶点的世界坐标和 Mask 裁剪区域的边界进行比对，判断该顶点是否在裁剪区域内，如果不是就将该顶点的透明通道设为零。</p>
+
+<h3 id="实现方式">实现方式</h3>
+
+<p>也有类似的实现方案，这里给出我参考的两个链接：</p>
+
+<p><a href="https://www.cnblogs.com/devgl/p/6598781.html">https://www.cnblogs.com/devgl/p/6598781.html</a></p>
+
+<p><a href="https://www.xuanyusong.com/archives/3518">https://www.xuanyusong.com/archives/3518</a></p>
+
+<p>首先附上 Shader 代码，其中 <u>add</u> 注释下的是改动的代码。</p>
+<div class="highlight"><pre class="chroma"><code class="language-cg" data-lang="cg">// Unity built-in shader source. Copyright (c) 2016 Unity Technologies. MIT license (see license.txt)
+
+Shader &#34;Particles/Additive&#34; {
+Properties {
+	_TintColor (&#34;Tint Color&#34;, Color) = (0.5,0.5,0.5,0.5)
+	_MainTex (&#34;Particle Texture&#34;, 2D) = &#34;white&#34; {}
+	_InvFade (&#34;Soft Particles Factor&#34;, Range(0.01,3.0)) = 1.0
+	//add
+	_ClipRect(&#34;ClipRect&#34;,Vector) =  (0,0,0,0)
+	[Toggle(UNITY_UI_ALPHACLIP)] _UseUIAlphaClip (&#34;Use Alpha Clip&#34;, Float) = 1
+	//add
+}
+
+Category {
+	Tags { &#34;Queue&#34;=&#34;Transparent&#34; &#34;IgnoreProjector&#34;=&#34;True&#34; &#34;RenderType&#34;=&#34;Transparent&#34; &#34;PreviewType&#34;=&#34;Plane&#34; }
+	Blend SrcAlpha One
+	ColorMask RGB
+	Cull Off Lighting Off ZWrite Off
+	
+	SubShader {
+		Pass {
+		
+			CGPROGRAM
+			#pragma vertex vert
+			#pragma fragment frag
+			#pragma target 2.0
+			#pragma multi_compile_particles
+			#pragma multi_compile_fog
+
+			#include &#34;UnityCG.cginc&#34;
+			//add
+			#include &#34;UnityUI.cginc&#34;
+			//add
+			#pragma multi_compile __ UNITY_UI_ALPHACLIP
+
+			sampler2D _MainTex;
+			fixed4 _TintColor;
+			//add
+			float4 _ClipRect;
+			//add
+
+			struct appdata_t {
+				float4 vertex : POSITION;
+				fixed4 color : COLOR;
+				float2 texcoord : TEXCOORD0;
+				UNITY_VERTEX_INPUT_INSTANCE_ID
+			};
+
+			struct v2f {
+				float4 vertex : SV_POSITION;
+				fixed4 color : COLOR;
+				float2 texcoord : TEXCOORD0;
+				UNITY_FOG_COORDS(1)
+				#ifdef SOFTPARTICLES_ON
+				float4 projPos : TEXCOORD2;
+				#endif
+				UNITY_VERTEX_OUTPUT_STEREO
+				//add
+				float4 worldPosition : TEXCOORD3;
+				//add
+			};
+			
+			float4 _MainTex_ST;
+
+			v2f vert (appdata_t v)
+			{
+				v2f o;
+				//add
+				o.worldPosition=v.vertex;
+				//add
+				UNITY_SETUP_INSTANCE_ID(v);
+				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
+				o.vertex = UnityObjectToClipPos(v.vertex);
+				#ifdef SOFTPARTICLES_ON
+				o.projPos = ComputeScreenPos (o.vertex);
+				COMPUTE_EYEDEPTH(o.projPos.z);
+				#endif
+				o.color = v.color;
+				o.texcoord = TRANSFORM_TEX(v.texcoord,_MainTex);
+				UNITY_TRANSFER_FOG(o,o.vertex);
+				return o;
+			}
+
+			UNITY_DECLARE_DEPTH_TEXTURE(_CameraDepthTexture);
+			float _InvFade;
+			
+			fixed4 frag (v2f i) : SV_Target
+			{
+				#ifdef SOFTPARTICLES_ON
+				float sceneZ = LinearEyeDepth (SAMPLE_DEPTH_TEXTURE_PROJ(_CameraDepthTexture, UNITY_PROJ_COORD(i.projPos)));
+				float partZ = i.projPos.z;
+				float fade = saturate (_InvFade * (sceneZ-partZ));
+				i.color.a *= fade;
+				#endif
+				
+				fixed4 col = 2.0f * i.color * _TintColor * tex2D(_MainTex, i.texcoord);
+				UNITY_APPLY_FOG_COLOR(i.fogCoord, col, fixed4(0,0,0,0)); // fog towards black due to our blend mode
+				//add
+				#ifdef UNITY_UI_ALPHACLIP
+				    col.a *= UnityGet2DClipping(i.worldPosition.xy, _ClipRect);
+				    clip (col.a - 0.001);
+				#endif
+				//add
+				return col;
+			}
+			ENDCG 
+		}
+	}	
+}
+}</code></pre></div>
+<p>这里贴上 C# 代码，该脚本需要挂载在对象需要裁剪的粒子特效上。</p>
+<div class="highlight"><pre class="chroma"><code class="language-cg" data-lang="cg">[RequireComponent(typeof(ParticleSystem))]
+public class ParticleMask : MonoBehaviour {
+
+    private RectMask2D mask;
+    private Material material;
+	// Use this for initialization
+	void Start () {
+        material = GetComponent&lt;ParticleSystem&gt;().GetComponent&lt;Renderer&gt;().material;
+        mask = GetComponentInParent&lt;RectMask2D&gt;();
+        //GetComponentInParent&lt;ScrollRect&gt;().onValueChanged.AddListener((e) =&gt; { SetClip(); });
+        SetClip();
+	}
+    public void SetClip()
+    {
+        Vector3[] vec = new Vector3[4];
+        mask.GetComponent&lt;RectTransform&gt;().GetWorldCorners(vec);
+        var clipRect = new Vector4(vec[0].x,vec[0].y,vec[2].x,vec[2].y);
+        material.SetVector(&#34;_ClipRect&#34;, clipRect);
+    }
+}</code></pre></div>
+<p>因为我这里的 Mask 裁剪区域的大小是不变的，所以只需要在对象激活时向 Shader 中传入当前滑动区域的 Mask 的组件的世界空间坐标系的位置点。如果有裁剪区域变动的需求就可以将上图 C# 脚本中的注释的一行就可以。</p>
+
+
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      
+      <li>
+        <a href="//twitter.com/share?url=https%3a%2f%2fwww.huangshengbo.com%2f2019%2f12%2f12%2flearnrecord%2f&amp;text=Mask%e8%a3%81%e5%89%aaUI%e7%b2%92%e5%ad%90%e7%89%b9%e6%95%88&amp;via=" target="_blank" title="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.huangshengbo.com%2f2019%2f12%2f12%2flearnrecord%2f" target="_blank" title="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//reddit.com/submit?url=https%3a%2f%2fwww.huangshengbo.com%2f2019%2f12%2f12%2flearnrecord%2f&amp;title=Mask%e8%a3%81%e5%89%aaUI%e7%b2%92%e5%ad%90%e7%89%b9%e6%95%88" target="_blank" title="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fwww.huangshengbo.com%2f2019%2f12%2f12%2flearnrecord%2f&amp;title=Mask%e8%a3%81%e5%89%aaUI%e7%b2%92%e5%ad%90%e7%89%b9%e6%95%88" target="_blank" title="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fwww.huangshengbo.com%2f2019%2f12%2f12%2flearnrecord%2f&amp;title=Mask%e8%a3%81%e5%89%aaUI%e7%b2%92%e5%ad%90%e7%89%b9%e6%95%88" target="_blank" title="Share on StumbleUpon">
+          <i class="fab fa-stumbleupon"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fwww.huangshengbo.com%2f2019%2f12%2f12%2flearnrecord%2f&amp;description=Mask%e8%a3%81%e5%89%aaUI%e7%b2%92%e5%ad%90%e7%89%b9%e6%95%88" target="_blank" title="Share on Pinterest">
+          <i class="fab fa-pinterest"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
+          
+
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+      
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:m15136737050@163.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/huangshengbo5" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="huangshengbo.com">黄圣博</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2019
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://www.huangshengbo.com">黄圣博的博客</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://www.huangshengbo.com/js/main.js"></script>
+<script src="https://www.huangshengbo.com/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="https://www.huangshengbo.com/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+
