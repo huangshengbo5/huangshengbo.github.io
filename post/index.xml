@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Even - A super concise theme for Hugo</title>
-    <link>http://localhost:1313/post/</link>
-    <description>Recent content in Posts on Even - A super concise theme for Hugo</description>
+    <title>Posts on 黄圣博的博客</title>
+    <link>http://www.huangshengbo.com/post/</link>
+    <description>Recent content in Posts on 黄圣博的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 12 Dec 2019 17:08:52 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 17 Dec 2019 19:57:11 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.huangshengbo.com/post/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Mask裁剪UI粒子特效</title>
-      <link>http://localhost:1313/2019/12/12/learnrecord/</link>
-      <pubDate>Thu, 12 Dec 2019 17:08:52 +0800</pubDate>
-      
-      <guid>http://localhost:1313/2019/12/12/learnrecord/</guid>
-      <description>最近在项目遇到一个问题，加上最近刚看完 Shader 入门到精通 ，所有借此来研究一下这个问题。 核心原理 GPU 每次刷新屏幕时，会重新计算物体上的 Shader 中的顶点着色器</description>
-    </item>
     
     <item>
       <title>使用Hugo搭建静态网页</title>
-      <link>http://localhost:1313/2019/11/06/hello-world/</link>
-      <pubDate>Tue, 05 Nov 2019 19:57:11 +0800</pubDate>
+      <link>http://www.huangshengbo.com/2019/12/17/hugo-setup/</link>
+      <pubDate>Tue, 17 Dec 2019 19:57:11 +0800</pubDate>
       
-      <guid>http://localhost:1313/2019/11/06/hello-world/</guid>
-      <description>##构建环境 windows7 部署我的服务器流程 首先在GitHub上注册我的账号名称：huangshengbo5 接着建造我的第一项目：http://huan</description>
+      <guid>http://www.huangshengbo.com/2019/12/17/hugo-setup/</guid>
+      <description>构建环境 Windows 7 Hugo 0.54.0 Even 2019/09/08 commit: d39d3e443953caea05510b19fdd7a259c71a0ab3 部署我的服务器流程 首先在GitHub上注册我的账号名称：huangshengbo5 接着建造我的第一项目：http:/</description>
+    </item>
+    
+    <item>
+      <title>Mask裁剪UI粒子特效</title>
+      <link>http://www.huangshengbo.com/2019/12/12/learnrecord/</link>
+      <pubDate>Thu, 12 Dec 2019 17:08:52 +0800</pubDate>
+      
+      <guid>http://www.huangshengbo.com/2019/12/12/learnrecord/</guid>
+      <description>最近在项目遇到一个问题，加上最近刚看完 Shader 入门到精通 ，所有借此来研究一下这个问题。 核心原理 GPU 每次刷新屏幕时，会重新计算物体上的 Shader 中的顶点着色器</description>
     </item>
     
   </channel>

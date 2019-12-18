@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<?xml-stylesheet type="text/xsl" href="http://localhost:1313/sitemap.xsl"?>
+<?xml-stylesheet type="text/xsl" href="http://www.huangshengbo.com/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://localhost:1313/2019/12/12/learnrecord/</loc>
+    <loc>http://www.huangshengbo.com/2019/12/17/hugo-setup/</loc>
+    <lastmod>2019-12-17T19:57:11+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.huangshengbo.com/2019/12/12/learnrecord/</loc>
     <lastmod>2019-12-12T17:08:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2019/11/06/hello-world/</loc>
-    <lastmod>2019-11-05T19:57:11+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>http://www.huangshengbo.com/categories/</loc>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2019-12-12T17:08:52+08:00</lastmod>
+    <loc>http://www.huangshengbo.com/post/</loc>
+    <lastmod>2019-12-17T19:57:11+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/</loc>
-    <lastmod>2019-12-12T17:08:52+08:00</lastmod>
+    <loc>http://www.huangshengbo.com/tags/</loc>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>http://www.huangshengbo.com/</loc>
+    <lastmod>2019-12-17T19:57:11+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
