@@ -1,289 +1,153 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/WebPage">
-  <head>
-    
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>使用Hugo搭建静态网页 - Even - A super concise theme for Hugo</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
-  <title>使用Hugo搭建静态网页 - 黄圣博的博客</title>
-  <meta name="description" content="部署我的服务器流程  首先在GitHub上注册我的账号名称：huangshengbo5 接着建造我的第一项目：http://huangshengbo.github.io/ 项目建造完以后，点击设置（setting) ,跳转界面后，看到GitHubPages界面下的ChangeTheme按钮，点击进去可以选择自己中意的网页面板。 最重要的来了，就是将自己的域名和当前的GitHub工程联系在一起。首先需要在namesiol里注册账号(www.namesoil.com),然后直接选择输入自己想要的域名，一般是自己名字的英文翻译。庆幸 huangshengbo.com 这个域名还在。 接着上一步说，在我们在购买完属于自己的域名以后，在namesoil页面中点击domain manager 按钮，跳转界面后点击自己的域名按钮，选择DNS Records 左侧的Update 按钮，再次跳转界面后，在页面的中部可以看到自己域名的一些信息，选择Edit按钮，可以在Target Hostname中填写自己在GitHub中已经建好的工程名称。点击Submit按钮，就可以将自己的工程重定向到自己的域名中。  如何将本地的工程加载到GitHub上  首先需要去 https://git-scm.com 网站上下载最新的Git插件，下载好后安装运行。 如果是先在GitHub上建造了一个新的仓库，就会直接出一个界面需要你将一个本地的工程文件重定向到当前创建的GitHub库中。 实例代码：
-git remote add origin https://github.com/huangshengbo5/Test.git git push -u origin master 在自己建立的本地目录下邮件可以看到GitBaskHere选项，点击会弹出一个命令行窗口，将上面的实例代码拷贝到命令行中，点击回车就将本地的目录重定向到自己的GitHub仓库中了。
-  如何添加环境变量  这是Hugo的下载地址 https://github.com/gohugoio/hugo/releases 我的电脑是windows64位，所有我下载了 hugo_0.59.1_Windows-64bit.zip 版本。 我现在的需求是将 hugo 这个变量加到电脑的环境变量中。 首先右击我的电脑，点击属性，点击右侧的高级系统设置，点击弹窗下面的环境变量，点击下面的系统变量的新建按钮，在 Name 一栏中填写自己想要的变量名称，我起的是 hugo ,下面的 path 路径设置为当前下载的 Hugo.exe 可执行文件的目录的路径，点击确定。 最后还要在上述的环境变量的 path 变量中添加 Hugo.exe 可执行文件的目录的路径，方法是将文件目录路径加到 path 变量的前面，并且用 ; 分开。点击确定，就完成了。  使用Hugo搭建静态网页  cmd 命令： hugo new site myblog myblog :我的目录名称 可以下载一个Theme主题： git submodule add https://github.">
-  <meta name="author" content="黄圣博"/><script type="application/ld+json">
-{
-    "@context": "http://schema.org",
-    "@type": "WebSite",
-    "name": "黄圣博的博客",
-    
-    "url": "https:\/\/www.huangshengbo.com"
-}
-</script><script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "Organization",
-  "name": "",
-  "url": "https:\/\/www.huangshengbo.com"
-  
-  
-  
-  
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [{
-        "@type": "ListItem",
-        "position": 1,
-        "item": {
-          "@id": "https:\/\/www.huangshengbo.com",
-          "name": "home"
-        }
-    },{
-        "@type": "ListItem",
-        "position": 3,
-        "item": {
-          "@id": "https:\/\/www.huangshengbo.com\/2019\/11\/06\/hello-world\/",
-          "name": "使用 hugo搭建静态网页"
-        }
-    }]
-}
-</script><script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "Article",
-  "author": {
-    "name" : "黄圣博"
-  },
-  "headline": "使用Hugo搭建静态网页",
-  "description" : "部署我的服务器流程  首先在GitHub上注册我的账号名称：huangshengbo5 接着建造我的第一项目：http:\/\/huangshengbo.github.io\/ 项目建造完以后，点击设置（setting) ,跳转界面后，看到GitHubPages界面下的ChangeTheme按钮，点击进去可以选择自己中意的网页面板。 最重要的来了，就是将自己的域名和当前的GitHub工程联系在一起。首先需要在namesiol里注册账号(www.namesoil.com),然后直接选择输入自己想要的域名，一般是自己名字的英文翻译。庆幸 huangshengbo.com 这个域名还在。 接着上一步说，在我们在购买完属于自己的域名以后，在namesoil页面中点击domain manager 按钮，跳转界面后点击自己的域名按钮，选择DNS Records 左侧的Update 按钮，再次跳转界面后，在页面的中部可以看到自己域名的一些信息，选择Edit按钮，可以在Target Hostname中填写自己在GitHub中已经建好的工程名称。点击Submit按钮，就可以将自己的工程重定向到自己的域名中。  如何将本地的工程加载到GitHub上  首先需要去 https:\/\/git-scm.com 网站上下载最新的Git插件，下载好后安装运行。 如果是先在GitHub上建造了一个新的仓库，就会直接出一个界面需要你将一个本地的工程文件重定向到当前创建的GitHub库中。 实例代码：\ngit remote add origin https:\/\/github.com\/huangshengbo5\/Test.git git push -u origin master 在自己建立的本地目录下邮件可以看到GitBaskHere选项，点击会弹出一个命令行窗口，将上面的实例代码拷贝到命令行中，点击回车就将本地的目录重定向到自己的GitHub仓库中了。\n  如何添加环境变量  这是Hugo的下载地址 https:\/\/github.com\/gohugoio\/hugo\/releases 我的电脑是windows64位，所有我下载了 hugo_0.59.1_Windows-64bit.zip 版本。 我现在的需求是将 hugo 这个变量加到电脑的环境变量中。 首先右击我的电脑，点击属性，点击右侧的高级系统设置，点击弹窗下面的环境变量，点击下面的系统变量的新建按钮，在 Name 一栏中填写自己想要的变量名称，我起的是 hugo ,下面的 path 路径设置为当前下载的 Hugo.exe 可执行文件的目录的路径，点击确定。 最后还要在上述的环境变量的 path 变量中添加 Hugo.exe 可执行文件的目录的路径，方法是将文件目录路径加到 path 变量的前面，并且用 ; 分开。点击确定，就完成了。  使用Hugo搭建静态网页  cmd 命令： hugo new site myblog myblog :我的目录名称 可以下载一个Theme主题： git submodule add https:\/\/github.",
-  "inLanguage" : "en",
-  "wordCount":  111 ,
-  "datePublished" : "2019-11-05T19:57:11",
-  "dateModified" : "2019-11-05T19:57:11",
-  "image" : "https:\/\/www.huangshengbo.com\/img\/avatar-icon.png",
-  "keywords" : [ "" ],
-  "mainEntityOfPage" : "https:\/\/www.huangshengbo.com\/2019\/11\/06\/hello-world\/",
-  "publisher" : {
-    "@type": "Organization",
-    "name" : "https:\/\/www.huangshengbo.com",
-    "logo" : {
-        "@type" : "ImageObject",
-        "url" : "https:\/\/www.huangshengbo.com\/img\/avatar-icon.png",
-        "height" :  60 ,
-        "width" :  60
-    }
-  }
-}
-</script>
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="olOwOlo" /><meta name="description" content="部署我的服务器流程 首先在GitHub上注册我的账号名称：huangshengbo5 接着建造我的第一项目：http://huangshengb" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0 with theme even" />
+
+
+<link rel="canonical" href="http://localhost:1313/2019/11/06/hello-world/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
 
 <meta property="og:title" content="使用Hugo搭建静态网页" />
-<meta property="og:description" content="部署我的服务器流程  首先在GitHub上注册我的账号名称：huangshengbo5 接着建造我的第一项目：http://huangshengbo.github.io/ 项目建造完以后，点击设置（setting) ,跳转界面后，看到GitHubPages界面下的ChangeTheme按钮，点击进去可以选择自己中意的网页面板。 最重要的来了，就是将自己的域名和当前的GitHub工程联系在一起。首先需要在namesiol里注册账号(www.namesoil.com),然后直接选择输入自己想要的域名，一般是自己名字的英文翻译。庆幸 huangshengbo.com 这个域名还在。 接着上一步说，在我们在购买完属于自己的域名以后，在namesoil页面中点击domain manager 按钮，跳转界面后点击自己的域名按钮，选择DNS Records 左侧的Update 按钮，再次跳转界面后，在页面的中部可以看到自己域名的一些信息，选择Edit按钮，可以在Target Hostname中填写自己在GitHub中已经建好的工程名称。点击Submit按钮，就可以将自己的工程重定向到自己的域名中。  如何将本地的工程加载到GitHub上  首先需要去 https://git-scm.com 网站上下载最新的Git插件，下载好后安装运行。 如果是先在GitHub上建造了一个新的仓库，就会直接出一个界面需要你将一个本地的工程文件重定向到当前创建的GitHub库中。 实例代码：
-git remote add origin https://github.com/huangshengbo5/Test.git git push -u origin master 在自己建立的本地目录下邮件可以看到GitBaskHere选项，点击会弹出一个命令行窗口，将上面的实例代码拷贝到命令行中，点击回车就将本地的目录重定向到自己的GitHub仓库中了。
-  如何添加环境变量  这是Hugo的下载地址 https://github.com/gohugoio/hugo/releases 我的电脑是windows64位，所有我下载了 hugo_0.59.1_Windows-64bit.zip 版本。 我现在的需求是将 hugo 这个变量加到电脑的环境变量中。 首先右击我的电脑，点击属性，点击右侧的高级系统设置，点击弹窗下面的环境变量，点击下面的系统变量的新建按钮，在 Name 一栏中填写自己想要的变量名称，我起的是 hugo ,下面的 path 路径设置为当前下载的 Hugo.exe 可执行文件的目录的路径，点击确定。 最后还要在上述的环境变量的 path 变量中添加 Hugo.exe 可执行文件的目录的路径，方法是将文件目录路径加到 path 变量的前面，并且用 ; 分开。点击确定，就完成了。  使用Hugo搭建静态网页  cmd 命令： hugo new site myblog myblog :我的目录名称 可以下载一个Theme主题： git submodule add https://github.">
-<meta property="og:image" content="https://www.huangshengbo.com/img/avatar-icon.png" />
-<meta property="og:url" content="https://www.huangshengbo.com/2019/11/06/hello-world/" />
-<meta property="og:type" content="website" />
-<meta property="og:site_name" content="黄圣博的博客" />
+<meta property="og:description" content="部署我的服务器流程 首先在GitHub上注册我的账号名称：huangshengbo5 接着建造我的第一项目：http://huangshengb" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2019/11/06/hello-world/" />
+<meta property="article:published_time" content="2019-11-05T19:57:11&#43;08:00"/>
+<meta property="article:modified_time" content="2019-11-05T19:57:11&#43;08:00"/>
 
-  <meta name="twitter:title" content="使用Hugo搭建静态网页" />
-  <meta name="twitter:description" content="部署我的服务器流程  首先在GitHub上注册我的账号名称：huangshengbo5 接着建造我的第一项目：http://huangshengbo.github.io/ 项目建造完以后，点击设置（setting) ,跳转界面后，看到GitHubPages界面下的ChangeTheme按钮，点击进去可以选择自己中意的网页面板。 最重要的来了，就是将自己的域名和当前的GitHub工程联系在一起。首先 …">
-  <meta name="twitter:image" content="https://www.huangshengbo.com/img/avatar-icon.png" />
-  <meta name="twitter:card" content="summary" />
-  <link href='https://www.huangshengbo.com/img/favicon.ico' rel='icon' type='image/x-icon'/>
-  <meta name="generator" content="Hugo 0.59.1" />
-  <link rel="alternate" href="https://www.huangshengbo.com/index.xml" type="application/rss+xml" title="黄圣博的博客"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://www.huangshengbo.com/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
-  <link rel="stylesheet" href="https://www.huangshengbo.com/css/highlight.min.css" /><link rel="stylesheet" href="https://www.huangshengbo.com/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+<meta itemprop="name" content="使用Hugo搭建静态网页">
+<meta itemprop="description" content="部署我的服务器流程 首先在GitHub上注册我的账号名称：huangshengbo5 接着建造我的第一项目：http://huangshengb">
+
+
+<meta itemprop="datePublished" content="2019-11-05T19:57:11&#43;08:00" />
+<meta itemprop="dateModified" content="2019-11-05T19:57:11&#43;08:00" />
+<meta itemprop="wordCount" content="1308">
 
 
 
-  </head>
-  <body>
-    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="https://www.huangshengbo.com">黄圣博的博客</a>
-    </div>
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="使用Hugo搭建静态网页"/>
+<meta name="twitter:description" content="部署我的服务器流程 首先在GitHub上注册我的账号名称：huangshengbo5 接着建造我的第一项目：http://huangshengb"/>
 
-    <div class="collapse navbar-collapse" id="main-navbar">
-      <ul class="nav navbar-nav navbar-right">
-        
-          
-            <li>
-              <a title="Blog" href="/">Blog</a>
-            </li>
-          
-        
-          
-            <li class="navlinks-container">
-              <a class="navlinks-parent">Samples</a>
-              <div class="navlinks-children">
-                
-                  <a href="/post/2017-03-07-bigimg-sample">Big Image Sample</a>
-                
-                  <a href="/post/2017-03-05-math-sample">Math Sample</a>
-                
-                  <a href="/post/2016-03-08-code-sample">Code Sample</a>
-                
-              </div>
-            </li>
-          
-        
-          
-            <li>
-              <a title="About" href="/page/about/">About</a>
-            </li>
-          
-        
-          
-            <li>
-              <a title="Tags" href="/tags">Tags</a>
-            </li>
-          
-        
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
 
-        
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
 
-        
-      </ul>
-    </div>
-
-    
-      <div class="avatar-container">
-        <div class="avatar-img-border">
-          <a title="黄圣博的博客" href="https://www.huangshengbo.com">
-            <img class="avatar-img" src="https://www.huangshengbo.com/img/avatar-icon.png" alt="黄圣博的博客" />
-          </a>
-        </div>
-      </div>
-    
-
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Even</a>
   </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
 </nav>
-
-
-
-
-    
-
-
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-
-<div class="pswp__bg"></div>
-
-<div class="pswp__scroll-wrap">
-    
-    <div class="pswp__container">
-      <div class="pswp__item"></div>
-      <div class="pswp__item"></div>
-      <div class="pswp__item"></div>
-    </div>
-    
-    <div class="pswp__ui pswp__ui--hidden">
-    <div class="pswp__top-bar">
-      
-      <div class="pswp__counter"></div>
-      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-      <button class="pswp__button pswp__button--share" title="Share"></button>
-      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-      
-      
-      <div class="pswp__preloader">
-        <div class="pswp__preloader__icn">
-          <div class="pswp__preloader__cut">
-            <div class="pswp__preloader__donut"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-      <div class="pswp__share-tooltip"></div>
-    </div>
-    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-    </button>
-    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-    </button>
-    <div class="pswp__caption">
-      <div class="pswp__caption__center"></div>
-    </div>
-    </div>
-    </div>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Even</a>
 </div>
 
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
 
-  
-  
-  
-
-
-
-
-
-
-  
-
-  <header class="header-section ">
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
     
-    <div class="intro-header no-img">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="post-heading">
-              
-                <h1>使用Hugo搭建静态网页</h1>
-              
-              
-              
-              
-                <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on November 5, 2019
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;111&nbsp;words
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;黄圣博
-    
-  
-  
-</span>
+    <header class="post-header">
+      <h1 class="post-title">使用Hugo搭建静态网页</h1>
 
-
-              
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-
-    
-<div class="container" role="main">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <article role="main" class="blog-post">
+      <div class="post-meta">
+        <span class="post-time"> 2019-11-05 </span>
         
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#部署我的服务器流程">部署我的服务器流程</a></li>
+<li><a href="#如何将本地的工程加载到github上">如何将本地的工程加载到GitHub上</a></li>
+<li><a href="#如何添加环境变量">如何添加环境变量</a></li>
+<li><a href="#使用hugo搭建静态网页">使用Hugo搭建静态网页</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
 
 <hr />
 
@@ -301,13 +165,21 @@ git remote add origin https://github.com/huangshengbo5/Test.git git push -u orig
 
 <ol>
 <li>首先需要去  <a href="https://git-scm.com">https://git-scm.com</a> 网站上下载最新的Git插件，下载好后安装运行。</li>
-
-<li><p>如果是先在GitHub上建造了一个新的仓库，就会直接出一个界面需要你将一个本地的工程文件重定向到当前创建的GitHub库中。
-实例代码：</p>
-<div class="highlight"><pre class="chroma">git remote add origin https://github.com/huangshengbo5/Test.git
-git push -u origin master</pre></div></li>
-
-<li><p>在自己建立的本地目录下邮件可以看到GitBaskHere选项，点击会弹出一个命令行窗口，将上面的实例代码拷贝到命令行中，点击回车就将本地的目录重定向到自己的GitHub仓库中了。</p></li>
+<li>如果是先在GitHub上建造了一个新的仓库，就会直接出一个界面需要你将一个本地的工程文件重定向到当前创建的GitHub库中。
+实例代码：</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">git remote add origin https://github.com/huangshengbo5/Test.git
+git push -u origin master</pre></td></tr></table>
+</div>
+</div>
+<ol>
+<li>在自己建立的本地目录下邮件可以看到GitBaskHere选项，点击会弹出一个命令行窗口，将上面的实例代码拷贝到命令行中，点击回车就将本地的目录重定向到自己的GitHub仓库中了。</li>
 </ol>
 
 <h2 id="如何添加环境变量">如何添加环境变量</h2>
@@ -329,170 +201,105 @@ git push -u origin master</pre></div></li>
 <li>设置本地的baseUrl:hugo &ndash;baseUrl=&ldquo;<a href="https://huangshengbo.com">https://huangshengbo.com</a></li>
 <li>在第六步后会在本地的mublog文件夹下创建一个publish的文件夹。</li>
 <li>在新的publish文件下操作。将博客关联到GitHub上：git remote add origin <a href="http://github.com/huangshengbo5/huangshengbo5.github.io.git">http://github.com/huangshengbo5/huangshengbo5.github.io.git</a><br /></li>
-
-<li><p>如果想要重新生成Public（静态网页设置）直接在Public父目录中使用Git 执行</p>
-<div class="highlight"><pre class="chroma">hugo</pre></div></li>
-
-<li><p>每次在本地执行Git后会进入Vim编辑器中，这时点击 i  可以进入编辑器模式，点击 esc 可以退出编辑器模式，进入命令行模式，点击shift+: 接着输入w q 就可以退出vim编辑器。此时的vim编辑器只是让你可以给该次的提交添加一下log。</p></li>
-
-<li><p>cd .. 去上一层目录</p></li>
-
-<li><p>在每一篇的文章中最好不要有draft : true 标记，这表明该文章是一篇草稿。在生成的静态网页中，无法被看到。</p></li>
+<li>如果想要重新生成Public（静态网页设置）直接在Public父目录中使用Git 执行
+<code>
+hugo
+</code></li>
+<li>每次在本地执行Git后会进入Vim编辑器中，这时点击 i  可以进入编辑器模式，点击 esc 可以退出编辑器模式，进入命令行模式，点击shift+: 接着输入w q 就可以退出vim编辑器。此时的vim编辑器只是让你可以给该次的提交添加一下log。</li>
+<li>cd .. 去上一层目录</li>
+<li>在每一篇的文章中最好不要有draft : true 标记，这表明该文章是一篇草稿。在生成的静态网页中，无法被看到。</li>
 </ol>
 
-
-        
-
-        
-            <hr/>
-            <section id="social-share">
-              <div class="list-inline footer-links">
-                
-
-<div class="share-box" aria-hidden="true">
-    <ul class="share">
-      
-      <li>
-        <a href="//twitter.com/share?url=https%3a%2f%2fwww.huangshengbo.com%2f2019%2f11%2f06%2fhello-world%2f&amp;text=%e4%bd%bf%e7%94%a8Hugo%e6%90%ad%e5%bb%ba%e9%9d%99%e6%80%81%e7%bd%91%e9%a1%b5&amp;via=" target="_blank" title="Share on Twitter">
-          <i class="fab fa-twitter"></i>
-        </a>
-      </li>
-  
-      
-      <li>
-        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.huangshengbo.com%2f2019%2f11%2f06%2fhello-world%2f" target="_blank" title="Share on Facebook">
-          <i class="fab fa-facebook"></i>
-        </a>
-      </li>
-  
-      
-      <li>
-        <a href="//reddit.com/submit?url=https%3a%2f%2fwww.huangshengbo.com%2f2019%2f11%2f06%2fhello-world%2f&amp;title=%e4%bd%bf%e7%94%a8Hugo%e6%90%ad%e5%bb%ba%e9%9d%99%e6%80%81%e7%bd%91%e9%a1%b5" target="_blank" title="Share on Reddit">
-          <i class="fab fa-reddit"></i>
-        </a>
-      </li>
-  
-      
-      <li>
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fwww.huangshengbo.com%2f2019%2f11%2f06%2fhello-world%2f&amp;title=%e4%bd%bf%e7%94%a8Hugo%e6%90%ad%e5%bb%ba%e9%9d%99%e6%80%81%e7%bd%91%e9%a1%b5" target="_blank" title="Share on LinkedIn">
-          <i class="fab fa-linkedin"></i>
-        </a>
-      </li>
-  
-      
-      <li>
-        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fwww.huangshengbo.com%2f2019%2f11%2f06%2fhello-world%2f&amp;title=%e4%bd%bf%e7%94%a8Hugo%e6%90%ad%e5%bb%ba%e9%9d%99%e6%80%81%e7%bd%91%e9%a1%b5" target="_blank" title="Share on StumbleUpon">
-          <i class="fab fa-stumbleupon"></i>
-        </a>
-      </li>
-  
-      
-      <li>
-        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fwww.huangshengbo.com%2f2019%2f11%2f06%2fhello-world%2f&amp;description=%e4%bd%bf%e7%94%a8Hugo%e6%90%ad%e5%bb%ba%e9%9d%99%e6%80%81%e7%bd%91%e9%a1%b5" target="_blank" title="Share on Pinterest">
-          <i class="fab fa-pinterest"></i>
-        </a>
-      </li>
-    </ul>
-  </div>
-  
-
-              </div>
-            </section>
-        
-
-        
-          
-
-          
-        
-      </article>
-
-      
-        <ul class="pager blog-pager">
-          
-          
-        </ul>
-      
-
-
-      
-        
-        
-      
-
     </div>
-  </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">olOwOlo</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2019-11-05
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/2019/12/12/learnrecord/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Mask裁剪UI粒子特效</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="http://m15136737050@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://www.huangshengbo.com" class="iconfont icon-google" title="google"></a>
+      <a href="http://github.com/huangshengbo5" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://localhost:1313" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
 </div>
 
-      
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <ul class="list-inline text-center footer-links">
-          
-              <li>
-                <a href="mailto:m15136737050@163.com" title="Email me">
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a href="https://github.com/huangshengbo5" title="GitHub">
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-          
-          <li>
-            <a href="" title="RSS">
-              <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
-          </li>
-          
-        </ul>
-        <p class="credits copyright text-muted">
-          
-            
-              <a href="huangshengbo.com">黄圣博</a>
-            
-          
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
 
-          &nbsp;&bull;&nbsp;&copy;
-          
-            2019
-          
+  
 
-          
-            &nbsp;&bull;&nbsp;
-            <a href="https://www.huangshengbo.com">黄圣博的博客</a>
-          
-        </p>
-        
-        <p class="credits theme-by text-muted">
-          <a href="https://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
-          
-        </p>
-      </div>
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">olOwOlo</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
     </div>
   </div>
-</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-<script src="https://www.huangshengbo.com/js/main.js"></script>
-<script src="https://www.huangshengbo.com/js/highlight.min.js"></script>
-<script> hljs.initHighlightingOnLoad(); </script>
-<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="https://www.huangshengbo.com/js/load-photoswipe.js"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
 
 
 
@@ -501,8 +308,5 @@ git push -u origin master</pre></div></li>
 
 
 
-
-    
-  </body>
+</body>
 </html>
-
