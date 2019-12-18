@@ -394,7 +394,7 @@ Category {
 <p>这里贴上 C# 代码，该脚本需要挂载在对象需要裁剪的粒子特效上。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-cg" data-lang="cg"><span class="lnt"> 1
+<pre class="chroma"><code class="language-c#" data-lang="c#"><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -416,26 +416,26 @@ Category {
 </span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cg" data-lang="cg">[RequireComponent(typeof(ParticleSystem))]
-public class ParticleMask : MonoBehaviour {
+<pre class="chroma"><code class="language-c#" data-lang="c#"><span class="na">[RequireComponent(typeof(ParticleSystem))]</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">ParticleMask</span> <span class="p">:</span> <span class="n">MonoBehaviour</span> <span class="p">{</span>
 
-    private RectMask2D mask;
-    private Material material;
-	// Use this for initialization
-	void Start () {
-        material = GetComponent&lt;ParticleSystem&gt;().GetComponent&lt;Renderer&gt;().material;
-        mask = GetComponentInParent&lt;RectMask2D&gt;();
-        //GetComponentInParent&lt;ScrollRect&gt;().onValueChanged.AddListener((e) =&gt; { SetClip(); });
-        SetClip();
-	}
-    public void SetClip()
-    {
-        Vector3[] vec = new Vector3[4];
-        mask.GetComponent&lt;RectTransform&gt;().GetWorldCorners(vec);
-        var clipRect = new Vector4(vec[0].x,vec[0].y,vec[2].x,vec[2].y);
-        material.SetVector(&#34;_ClipRect&#34;, clipRect);
-    }
-}</code></pre></td></tr></table>
+    <span class="k">private</span> <span class="n">RectMask2D</span> <span class="n">mask</span><span class="p">;</span>
+    <span class="k">private</span> <span class="n">Material</span> <span class="n">material</span><span class="p">;</span>
+	<span class="c1">// Use this for initialization
+</span><span class="c1"></span>	<span class="k">void</span> <span class="n">Start</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="n">material</span> <span class="p">=</span> <span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">ParticleSystem</span><span class="p">&gt;().</span><span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">Renderer</span><span class="p">&gt;().</span><span class="n">material</span><span class="p">;</span>
+        <span class="n">mask</span> <span class="p">=</span> <span class="n">GetComponentInParent</span><span class="p">&lt;</span><span class="n">RectMask2D</span><span class="p">&gt;();</span>
+        <span class="c1">//GetComponentInParent&lt;ScrollRect&gt;().onValueChanged.AddListener((e) =&gt; { SetClip(); });
+</span><span class="c1"></span>        <span class="n">SetClip</span><span class="p">();</span>
+	<span class="p">}</span>
+    <span class="k">public</span> <span class="k">void</span> <span class="n">SetClip</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Vector3</span><span class="na">[]</span> <span class="n">vec</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Vector3</span><span class="na">[4]</span><span class="p">;</span>
+        <span class="n">mask</span><span class="p">.</span><span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">RectTransform</span><span class="p">&gt;().</span><span class="n">GetWorldCorners</span><span class="p">(</span><span class="n">vec</span><span class="p">);</span>
+        <span class="kt">var</span> <span class="n">clipRect</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Vector4</span><span class="p">(</span><span class="n">vec</span><span class="na">[0]</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="n">vec</span><span class="na">[0]</span><span class="p">.</span><span class="n">y</span><span class="p">,</span><span class="n">vec</span><span class="na">[2]</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="n">vec</span><span class="na">[2]</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
+        <span class="n">material</span><span class="p">.</span><span class="n">SetVector</span><span class="p">(</span><span class="s">&#34;_ClipRect&#34;</span><span class="p">,</span> <span class="n">clipRect</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>因为我这里的 Mask 裁剪区域的大小是不变的，所以只需要在对象激活时向 Shader 中传入当前滑动区域的 Mask 的组件的世界空间坐标系的位置点。如果有裁剪区域变动的需求就可以将上图 C# 脚本中的注释的一行就可以。</p>
