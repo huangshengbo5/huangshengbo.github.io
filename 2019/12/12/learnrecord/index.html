@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cn">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-12-12T17:08:52&#43;08:00" />
 <meta itemprop="dateModified" content="2019-12-12T17:08:52&#43;08:00" />
-<meta itemprop="wordCount" content="786">
+<meta itemprop="wordCount" content="905">
 
 
 
@@ -131,7 +131,7 @@
     </header>
 
     <div class="post-toc" id="post-toc">
-  <h2 class="post-toc-title">Contents</h2>
+  <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
 <ul>
@@ -167,227 +167,165 @@
 <p>首先附上 Shader 代码，其中 <u>add</u> 注释下的是改动的代码。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-cg" data-lang="cg"><span class="lnt">  1
-</span><span class="lnt">  2
-</span><span class="lnt">  3
-</span><span class="lnt">  4
-</span><span class="lnt">  5
-</span><span class="lnt">  6
-</span><span class="lnt">  7
-</span><span class="lnt">  8
-</span><span class="lnt">  9
-</span><span class="lnt"> 10
-</span><span class="lnt"> 11
-</span><span class="lnt"> 12
-</span><span class="lnt"> 13
-</span><span class="lnt"> 14
-</span><span class="lnt"> 15
-</span><span class="lnt"> 16
-</span><span class="lnt"> 17
-</span><span class="lnt"> 18
-</span><span class="lnt"> 19
-</span><span class="lnt"> 20
-</span><span class="lnt"> 21
-</span><span class="lnt"> 22
-</span><span class="lnt"> 23
-</span><span class="lnt"> 24
-</span><span class="lnt"> 25
-</span><span class="lnt"> 26
-</span><span class="lnt"> 27
-</span><span class="lnt"> 28
-</span><span class="lnt"> 29
-</span><span class="lnt"> 30
-</span><span class="lnt"> 31
-</span><span class="lnt"> 32
-</span><span class="lnt"> 33
-</span><span class="lnt"> 34
-</span><span class="lnt"> 35
-</span><span class="lnt"> 36
-</span><span class="lnt"> 37
-</span><span class="lnt"> 38
-</span><span class="lnt"> 39
-</span><span class="lnt"> 40
-</span><span class="lnt"> 41
-</span><span class="lnt"> 42
-</span><span class="lnt"> 43
-</span><span class="lnt"> 44
-</span><span class="lnt"> 45
-</span><span class="lnt"> 46
-</span><span class="lnt"> 47
-</span><span class="lnt"> 48
-</span><span class="lnt"> 49
-</span><span class="lnt"> 50
-</span><span class="lnt"> 51
-</span><span class="lnt"> 52
-</span><span class="lnt"> 53
-</span><span class="lnt"> 54
-</span><span class="lnt"> 55
-</span><span class="lnt"> 56
-</span><span class="lnt"> 57
-</span><span class="lnt"> 58
-</span><span class="lnt"> 59
-</span><span class="lnt"> 60
-</span><span class="lnt"> 61
-</span><span class="lnt"> 62
-</span><span class="lnt"> 63
-</span><span class="lnt"> 64
-</span><span class="lnt"> 65
-</span><span class="lnt"> 66
-</span><span class="lnt"> 67
-</span><span class="lnt"> 68
-</span><span class="lnt"> 69
-</span><span class="lnt"> 70
-</span><span class="lnt"> 71
-</span><span class="lnt"> 72
-</span><span class="lnt"> 73
-</span><span class="lnt"> 74
-</span><span class="lnt"> 75
-</span><span class="lnt"> 76
-</span><span class="lnt"> 77
-</span><span class="lnt"> 78
-</span><span class="lnt"> 79
-</span><span class="lnt"> 80
-</span><span class="lnt"> 81
-</span><span class="lnt"> 82
-</span><span class="lnt"> 83
-</span><span class="lnt"> 84
-</span><span class="lnt"> 85
-</span><span class="lnt"> 86
-</span><span class="lnt"> 87
-</span><span class="lnt"> 88
-</span><span class="lnt"> 89
-</span><span class="lnt"> 90
-</span><span class="lnt"> 91
-</span><span class="lnt"> 92
-</span><span class="lnt"> 93
-</span><span class="lnt"> 94
-</span><span class="lnt"> 95
-</span><span class="lnt"> 96
-</span><span class="lnt"> 97
-</span><span class="lnt"> 98
-</span><span class="lnt"> 99
-</span><span class="lnt">100
-</span><span class="lnt">101
-</span><span class="lnt">102
-</span><span class="lnt">103
-</span><span class="lnt">104
-</span><span class="lnt">105
-</span><span class="lnt">106
-</span><span class="lnt">107
-</span><span class="lnt">108
-</span><span class="lnt">109
-</span><span class="lnt">110
+<pre class="chroma"><code class="language-cg" data-lang="cg"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cg" data-lang="cg">// Unity built-in shader source. Copyright (c) 2016 Unity Technologies. MIT license (see license.txt)
+<pre class="chroma"><code class="language-cg" data-lang="cg">Shader &#34;Unlit/NewUnlitShader&#34;
+{
+	Properties
+	{
+		_MainTex (&#34;Texture&#34;, 2D) = &#34;white&#34; {}
+		//add
+		_ClipRect(&#34;ClipRect&#34;,Vector) =  (0,0,0,0)
+	        [Toggle(UNITY_UI_ALPHACLIP)] _UseUIAlphaClip (&#34;Use Alpha Clip&#34;, Float) = 1 
+		//add
+	}
+	SubShader
+	{
+		Tags { &#34;RenderType&#34;=&#34;Opaque&#34; }
+		LOD 100
 
-Shader &#34;Particles/Additive&#34; {
-Properties {
-	_TintColor (&#34;Tint Color&#34;, Color) = (0.5,0.5,0.5,0.5)
-	_MainTex (&#34;Particle Texture&#34;, 2D) = &#34;white&#34; {}
-	_InvFade (&#34;Soft Particles Factor&#34;, Range(0.01,3.0)) = 1.0
-	//add
-	_ClipRect(&#34;ClipRect&#34;,Vector) =  (0,0,0,0)
-	[Toggle(UNITY_UI_ALPHACLIP)] _UseUIAlphaClip (&#34;Use Alpha Clip&#34;, Float) = 1
-	//add
-}
-
-Category {
-	Tags { &#34;Queue&#34;=&#34;Transparent&#34; &#34;IgnoreProjector&#34;=&#34;True&#34; &#34;RenderType&#34;=&#34;Transparent&#34; &#34;PreviewType&#34;=&#34;Plane&#34; }
-	Blend SrcAlpha One
-	ColorMask RGB
-	Cull Off Lighting Off ZWrite Off
-	
-	SubShader {
-		Pass {
-		
+		Pass
+		{
 			CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
-			#pragma target 2.0
-			#pragma multi_compile_particles
+			// make fog work
 			#pragma multi_compile_fog
-
+			
 			#include &#34;UnityCG.cginc&#34;
-			//add
+			//add	
 			#include &#34;UnityUI.cginc&#34;
-			//add
 			#pragma multi_compile __ UNITY_UI_ALPHACLIP
+			float4 _ClipRect;
+			//add	
+
+			struct appdata
+			{
+				float4 vertex : POSITION;
+				float2 uv : TEXCOORD0;
+			};
+
+			struct v2f
+			{
+				float2 uv : TEXCOORD0;
+				UNITY_FOG_COORDS(1)
+				float4 vertex : SV_POSITION;
+				//add	
+				float4 worldPosition : TEXCOORD1;
+				//add	
+			};
 
 			sampler2D _MainTex;
-			fixed4 _TintColor;
-			//add
-			float4 _ClipRect;
-			//add
-
-			struct appdata_t {
-				float4 vertex : POSITION;
-				fixed4 color : COLOR;
-				float2 texcoord : TEXCOORD0;
-				UNITY_VERTEX_INPUT_INSTANCE_ID
-			};
-
-			struct v2f {
-				float4 vertex : SV_POSITION;
-				fixed4 color : COLOR;
-				float2 texcoord : TEXCOORD0;
-				UNITY_FOG_COORDS(1)
-				#ifdef SOFTPARTICLES_ON
-				float4 projPos : TEXCOORD2;
-				#endif
-				UNITY_VERTEX_OUTPUT_STEREO
-				//add
-				float4 worldPosition : TEXCOORD3;
-				//add
-			};
-			
 			float4 _MainTex_ST;
-
-			v2f vert (appdata_t v)
+			
+			v2f vert (appdata v)
 			{
 				v2f o;
-				//add
+				//add	
 				o.worldPosition=v.vertex;
-				//add
-				UNITY_SETUP_INSTANCE_ID(v);
-				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
+				//add	
 				o.vertex = UnityObjectToClipPos(v.vertex);
-				#ifdef SOFTPARTICLES_ON
-				o.projPos = ComputeScreenPos (o.vertex);
-				COMPUTE_EYEDEPTH(o.projPos.z);
-				#endif
-				o.color = v.color;
-				o.texcoord = TRANSFORM_TEX(v.texcoord,_MainTex);
+				o.uv = TRANSFORM_TEX(v.uv, _MainTex);
 				UNITY_TRANSFER_FOG(o,o.vertex);
 				return o;
 			}
-
-			UNITY_DECLARE_DEPTH_TEXTURE(_CameraDepthTexture);
-			float _InvFade;
 			
 			fixed4 frag (v2f i) : SV_Target
 			{
-				#ifdef SOFTPARTICLES_ON
-				float sceneZ = LinearEyeDepth (SAMPLE_DEPTH_TEXTURE_PROJ(_CameraDepthTexture, UNITY_PROJ_COORD(i.projPos)));
-				float partZ = i.projPos.z;
-				float fade = saturate (_InvFade * (sceneZ-partZ));
-				i.color.a *= fade;
-				#endif
-				
-				fixed4 col = 2.0f * i.color * _TintColor * tex2D(_MainTex, i.texcoord);
-				UNITY_APPLY_FOG_COLOR(i.fogCoord, col, fixed4(0,0,0,0)); // fog towards black due to our blend mode
-				//add
+				// sample the texture
+				fixed4 col = tex2D(_MainTex, i.uv);
+				// apply fog
+				UNITY_APPLY_FOG(i.fogCoord, col);
+				//add	
 				#ifdef UNITY_UI_ALPHACLIP
 				    col.a *= UnityGet2DClipping(i.worldPosition.xy, _ClipRect);
 				    clip (col.a - 0.001);
 				#endif
-				//add
+				//add	
 				return col;
 			}
-			ENDCG 
+			ENDCG
 		}
-	}	
-}
+	}
 }</code></pre></td></tr></table>
 </div>
 </div>
@@ -440,15 +378,47 @@ Category {
 </div>
 <p>因为我这里的 Mask 裁剪区域的大小是不变的，所以只需要在对象激活时向 Shader 中传入当前滑动区域的 Mask 的组件的世界空间坐标系的位置点。如果有裁剪区域变动的需求就可以将上图 C# 脚本中的注释的一行就可以。</p>
 
+<p><img src="/learnrecord.png" alt="texture" /></p>
+
+<p>上述标红的地方就是</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">[Toggle(UNITY_UI_ALPHACLIP)] _UseUIAlphaClip (&#34;Use Alpha Clip&#34;, Float) = 1 </pre></td></tr></table>
+</div>
+</div>
+<p>这行代码的结就是在修改完 Shader 后，上图的 UseaAlphaClip 会自动勾选上。</p>
+
+<p><img src="/learnrecord.gif" alt="texture" />       <img src="/learnrecord2.gif" alt="texture" /></p>
+
+<p>上图中左边是修改过的效果，右边是未修改的效果。</p>
+
+<p>具体实例Demo中的ScrollView中的编辑视图如下所示：</p>
+
+<p><img src="/learnrecord2.png" alt="texture" /></p>
+
+<p>值得注意得是，我们现在使用的遮罩没有使用 ScrollView 组件默认的 Mask 遮罩组件，而是换为 RectMask2D 组件。当然也可以使用 Mask 组件进行遮罩，上述的 C# 代码和场景中的 Viewport 上的 RectMask2d 对换成 Mask 即可，效果和现在的一致。但是为什么还是要用 RectMask2D 来做呢？原因如下：</p>
+
+<ol>
+<li>不会使用模板缓存</li>
+<li>不会产生额外的 draw calls</li>
+<li>不会导致材质的变化</li>
+<li>可以有更快的性能表现</li>
+</ol>
+
+<p>但是 RectMask2D 还是有自己的缺点，就是只能遮挡2D物体。</p>
+
     </div>
 
     <div class="post-copyright">
   <p class="copyright-item">
-    <span class="item-title">Author</span>
+    <span class="item-title">文章作者</span>
     <span class="item-content">黄圣博</span>
   </p>
   <p class="copyright-item">
-    <span class="item-title">LastMod</span>
+    <span class="item-title">上次更新</span>
     <span class="item-content">
         2019-12-12
         
@@ -463,7 +433,7 @@ Category {
         <a class="prev" href="/2019/12/17/hugo-setup/">
             <i class="iconfont icon-left"></i>
             <span class="prev-text nav-default">使用Hugo搭建静态网页</span>
-            <span class="prev-text nav-mobile">Prev</span>
+            <span class="prev-text nav-mobile">上一篇</span>
           </a>
         
       </nav>
@@ -489,11 +459,11 @@ Category {
 
 <div class="copyright">
   <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    Theme - 
+    主题 - 
     <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
   </span>
 
