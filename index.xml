@@ -6,10 +6,28 @@
     <description>Recent content on 黄圣博的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 17 Dec 2019 19:57:11 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 16 Jan 2020 13:12:02 +0800</lastBuildDate>
     
 	<atom:link href="http://www.huangshengbo.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>构建AssetBundle资源</title>
+      <link>http://www.huangshengbo.com/2020/01/16/buildab/</link>
+      <pubDate>Thu, 16 Jan 2020 13:12:02 +0800</pubDate>
+      
+      <guid>http://www.huangshengbo.com/2020/01/16/buildab/</guid>
+      <description>开始构建 AB 资源 收集所有需要打包资源的依赖关系。 根据资源间的依赖关系赋予资源一个 BundleName. 具体步骤 先附上收集依赖依赖关系的代码： 1 2 3 4 5 6 7 8 9 10 11</description>
+    </item>
+    
+    <item>
+      <title>热更新开篇</title>
+      <link>http://www.huangshengbo.com/2020/01/11/hitupdate/</link>
+      <pubDate>Sat, 11 Jan 2020 20:32:41 +0800</pubDate>
+      
+      <guid>http://www.huangshengbo.com/2020/01/11/hitupdate/</guid>
+      <description>为什么要纠结于热更新 Unity 自带的 BuildPipeline.BuildAssetBundles() 就是构建 AB 文件的接口，但是 Unity 自己并不会将资源的依赖关系管理起来，因此会导致资源的冗余。具体情况请往下看： 我先新</description>
+    </item>
     
     <item>
       <title>使用Hugo搭建静态网页</title>
@@ -17,7 +35,7 @@
       <pubDate>Tue, 17 Dec 2019 19:57:11 +0800</pubDate>
       
       <guid>http://www.huangshengbo.com/2019/12/17/hugo-setup/</guid>
-      <description>构建环境 Windows 7 Hugo 0.54.0 Even 2019/09/08 commit: d39d3e443953caea05510b19fdd7a259c71a0ab3 部署我的服务器流程 首先在GitHub上注册我的账号名称：huangshengbo5 接着建造我的第一项目：http:/</description>
+      <description>构建环境 Windows 7 Hugo 0.54.0 Even 2019/09/08 commit: d39d3e443953caea05510b19fdd7a259c71a0ab3 部署我的服务器流程 首先在 GitHub 上注册我的账号名称：huangshengbo5 接着建造我的第一项目：http://huan</description>
     </item>
     
     <item>

@@ -35,7 +35,7 @@
 <link rel="manifest" href="/manifest.json">
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
-
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
@@ -45,7 +45,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://www.huangshengbo.com/" />
 
-<meta property="og:updated_time" content="2019-12-17T19:57:11&#43;08:00"/>
+<meta property="og:updated_time" content="2020-01-16T13:12:02&#43;08:00"/>
 
 <meta itemprop="name" content="黄圣博的博客">
 <meta itemprop="description" content="Hugo theme even example site.">
@@ -78,7 +78,7 @@
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
   <ul class="mobile-menu-list">
     <a href="/">
-        <li class="mobile-menu-item">Home</li>
+        <li class="mobile-menu-item">主页</li>
       </a><a href="/post/">
         <li class="mobile-menu-item">Archives</li>
       </a><a href="/tags/">
@@ -97,7 +97,7 @@
 <nav class="site-navbar">
   <ul id="menu" class="menu">
     <li class="menu-item">
-        <a class="menu-item-link" href="/">Home</a>
+        <a class="menu-item-link" href="/">主页</a>
       </li><li class="menu-item">
         <a class="menu-item-link" href="/post/">Archives</a>
       </li><li class="menu-item">
@@ -115,6 +115,44 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2020/01/16/buildab/">构建AssetBundle资源</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2020-01-16 </span>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      开始构建 AB 资源 收集所有需要打包资源的依赖关系。 根据资源间的依赖关系赋予资源一个 BundleName. 具体步骤 先附上收集依赖依赖关系的代码： 1 2 3 4 5 6 7 8 9 10 11
+    </div>
+    <div class="read-more">
+      <a href="/2020/01/16/buildab/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2020/01/11/hitupdate/">热更新开篇</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2020-01-11 </span>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      为什么要纠结于热更新 Unity 自带的 BuildPipeline.BuildAssetBundles() 就是构建 AB 文件的接口，但是 Unity 自己并不会将资源的依赖关系管理起来，因此会导致资源的冗余。具体情况请往下看： 我先新
+    </div>
+    <div class="read-more">
+      <a href="/2020/01/11/hitupdate/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/2019/12/17/hugo-setup/">使用Hugo搭建静态网页</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2019-12-17 </span>
@@ -124,7 +162,7 @@
   
   <div class="post-content">
     <div class="post-summary">
-      构建环境 Windows 7 Hugo 0.54.0 Even 2019/09/08 commit: d39d3e443953caea05510b19fdd7a259c71a0ab3 部署我的服务器流程 首先在GitHub上注册我的账号名称：huangshengbo5 接着建造我的第一项目：http:/
+      构建环境 Windows 7 Hugo 0.54.0 Even 2019/09/08 commit: d39d3e443953caea05510b19fdd7a259c71a0ab3 部署我的服务器流程 首先在 GitHub 上注册我的账号名称：huangshengbo5 接着建造我的第一项目：http://huan
     </div>
     <div class="read-more">
       <a href="/2019/12/17/hugo-setup/" class="read-more-link">阅读更多</a>
@@ -181,11 +219,16 @@
     <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
   </span>
 
-  
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
 
   <span class="copyright-year">
     &copy; 
-    2019
+    2019 - 
+    2020
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
