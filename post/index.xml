@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 黄圣博的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 16 Jan 2020 13:12:02 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 01 Nov 2020 21:23:17 +0800</lastBuildDate>
     
 	<atom:link href="http://www.huangshengbo.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>2020 11 01 TextSpilt</title>
+      <link>http://www.huangshengbo.com/2020/02/06/buildab/</link>
+      <pubDate>Sun, 01 Nov 2020 21:23:17 +0800</pubDate>
+      
+      <guid>http://www.huangshengbo.com/2020/02/06/buildab/</guid>
+      <description>问题 Unity UI Text 组件显示外文内容时会发生单词被截断 解决思路 当前句子加上最后一个单词的总宽度大于 Text 控件的宽度时，就将该句的最后一个单词放到下一句显示</description>
+    </item>
     
     <item>
       <title>构建AssetBundle资源</title>

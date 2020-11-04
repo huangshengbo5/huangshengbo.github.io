@@ -3,21 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://www.huangshengbo.com/post/</loc>
-    <lastmod>2020-01-16T13:12:02+08:00</lastmod>
+    <loc>http://www.huangshengbo.com/2020/02/06/buildab/</loc>
+    <lastmod>2020-11-01T21:23:17+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://www.huangshengbo.com/2020/01/16/buildab/</loc>
-    <lastmod>2020-01-16T13:12:02+08:00</lastmod>
+    <loc>http://www.huangshengbo.com/post/</loc>
+    <lastmod>2020-11-01T21:23:17+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.huangshengbo.com/</loc>
+    <lastmod>2020-11-01T21:23:17+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.huangshengbo.com/2020/01/16/buildab/</loc>
     <lastmod>2020-01-16T13:12:02+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
