@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.54.0 with theme even" />
+<meta name="generator" content="Hugo 0.61.0 with theme even" />
 
 
 <link rel="canonical" href="http://www.huangshengbo.com/2020/01/11/hitupdate/" />
@@ -34,7 +34,8 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -42,21 +43,17 @@
 <meta property="og:description" content="为什么要纠结于热更新 Unity 自带的 BuildPipeline.BuildAssetBundles() 就是构建 AB 文件的接口，但是 Unity 自己并不会将资源的依赖关系管理起来，因此会导致资源的冗余。具体情况请往下看： 我先新" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://www.huangshengbo.com/2020/01/11/hitupdate/" />
-<meta property="article:published_time" content="2020-01-11T20:32:41&#43;08:00"/>
-<meta property="article:modified_time" content="2020-01-11T20:32:41&#43;08:00"/>
-
+<meta property="article:published_time" content="2020-01-11T20:32:41+08:00" />
+<meta property="article:modified_time" content="2020-01-11T20:32:41+08:00" />
 <meta itemprop="name" content="热更新开篇">
 <meta itemprop="description" content="为什么要纠结于热更新 Unity 自带的 BuildPipeline.BuildAssetBundles() 就是构建 AB 文件的接口，但是 Unity 自己并不会将资源的依赖关系管理起来，因此会导致资源的冗余。具体情况请往下看： 我先新">
-
-
 <meta itemprop="datePublished" content="2020-01-11T20:32:41&#43;08:00" />
 <meta itemprop="dateModified" content="2020-01-11T20:32:41&#43;08:00" />
 <meta itemprop="wordCount" content="769">
 
 
 
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="热更新开篇"/>
 <meta name="twitter:description" content="为什么要纠结于热更新 Unity 自带的 BuildPipeline.BuildAssetBundles() 就是构建 AB 文件的接口，但是 Unity 自己并不会将资源的依赖关系管理起来，因此会导致资源的冗余。具体情况请往下看： 我先新"/>
 
@@ -134,42 +131,25 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#为什么要纠结于热更新">为什么要纠结于热更新</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#heading">为什么要纠结于热更新</a></li>
+  </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      
-
-<h2 id="为什么要纠结于热更新">为什么要纠结于热更新</h2>
-
+      <h2 id="heading">为什么要纠结于热更新</h2>
 <p>Unity 自带的 BuildPipeline.BuildAssetBundles() 就是构建 AB 文件的接口，但是 Unity 自己并不会将资源的依赖关系管理起来，因此会导致资源的冗余。具体情况请往下看：</p>
-
 <p>我先新建两个预制体，分别命名为 Cube 和 Spere ,并且分别加上与之名称相对应的 AssetBundle 名称，然后我又新建了一个材质名为 Blue,并修改材质颜色，并将该材质赋给前面的两个预制体。然后启动构建AB脚本，结果如下：</p>
-
-<p><img src="/hotupdate1.png" alt="texture" /></p>
-
-<p><img src="/hotupdate3.png" alt="texture" /></p>
-
+<p><img src="/hotupdate1.png" alt="texture"></p>
+<p><img src="/hotupdate3.png" alt="texture"></p>
 <p>然后我再将 Blue 材质加上名为 blue 的 AB 名称，在运行一遍 AB 构建脚本，结果如下：</p>
-
-<p><img src="/hotupdate2.png" alt="texture" /></p>
-
-<p><img src="/hotupdate4.png" alt="texture" /></p>
-
+<p><img src="/hotupdate2.png" alt="texture"></p>
+<p><img src="/hotupdate4.png" alt="texture"></p>
 <p>可见当材质 Blue 没有设置 BundleName 的时候，它的被依赖项 Cube 和 Sphere 构建出的 AB 文件都有一份材质 Blue 资源。但是当材质 Blue 设置了自己的 BlundleName 后就可以把自己的资源单独构建一份 AB 文件。而且在材质 Blue 没有设置 BundleName 前， Cube 和 Spere 对应的构建出的 manifeste 文件中没有对材质 Blue 的依赖信息，但是当材质 Blue 设置自己的 BunldNmame后就出现对应的依赖信息。</p>
-
 <p>由此可见 Unity 是根据资源的是否设置了 BundleName 来构建资源信息的，但是这样会造成 AB 资源的冗余(上述两种方式构建结果 AB 文件大小相差 37 kb),所以我们需要在构造 AB 文件前自己去找到资源间的依赖关系，减少这种资源上的冗余。</p>
-
 <p>再开始动手解决这个问题前，我们需要先考虑如何避免这种冗余问题，表面上是给需要设定 BundleName 的资源正确设定 BundleName。但是如何判断某个资源是否需要设定 BundleName？我们先看一个资源间的依赖关系图实例，来帮助更好的理解如何解决上述问题。</p>
-
-<p><img src="/hotupdate1-1.png" alt="texture" /></p>
-
+<p><img src="/hotupdate1-1.png" alt="texture"></p>
 <p>在上图中只有资源 A 和资源 B 有自己的 BundleName，但是这两个资源间会有资源依赖的重叠，比如资源 A 依赖的 D 和 E 也被资源 B 依赖，但是资源 C 只被资源 A 依赖。如果我们没有将无 BundleName 的资源 C D E 设置BundleName直接构建AB文件的话会发生什么，结果就是会构架出两个AB文件，并且构建出来的以 A 为 BundleName 的 AB 文件中会有资源 DE 的信息，同样以 B 为 BundleName 的 AB 文件中也会有资源 DE 的信息，因此最好的办法是将资源 DE 作为一个 AB 资源进行构建。</p>
 
     </div>
@@ -242,13 +222,10 @@
   <span class="copyright-year">
     &copy; 
     2019 - 
-    2020
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">黄圣博</span>
+    2020<span class="heart"><i class="iconfont icon-heart"></i></span><span>黄圣博</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">
@@ -259,7 +236,10 @@
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
 
 
 

@@ -1,1 +1,2 @@
 User-agent: *
+Sitemap: http://www.huangshengbo.com/sitemap.xml

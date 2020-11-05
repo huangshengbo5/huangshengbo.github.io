@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.54.0 with theme even" />
+<meta name="generator" content="Hugo 0.61.0 with theme even" />
 
 
 <link rel="canonical" href="http://www.huangshengbo.com/2020/01/16/buildab/" />
@@ -34,7 +34,8 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -42,21 +43,17 @@
 <meta property="og:description" content="开始构建 AB 资源 收集所有需要打包资源的依赖关系。 根据资源间的依赖关系赋予资源一个 BundleName. 具体步骤 先附上收集依赖依赖关系的代码： 1 2 3 4 5 6 7 8 9 10 11" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://www.huangshengbo.com/2020/01/16/buildab/" />
-<meta property="article:published_time" content="2020-01-16T13:12:02&#43;08:00"/>
-<meta property="article:modified_time" content="2020-01-16T13:12:02&#43;08:00"/>
-
+<meta property="article:published_time" content="2020-01-16T13:12:02+08:00" />
+<meta property="article:modified_time" content="2020-01-16T13:12:02+08:00" />
 <meta itemprop="name" content="构建AssetBundle资源">
 <meta itemprop="description" content="开始构建 AB 资源 收集所有需要打包资源的依赖关系。 根据资源间的依赖关系赋予资源一个 BundleName. 具体步骤 先附上收集依赖依赖关系的代码： 1 2 3 4 5 6 7 8 9 10 11">
-
-
 <meta itemprop="datePublished" content="2020-01-16T13:12:02&#43;08:00" />
 <meta itemprop="dateModified" content="2020-01-16T13:12:02&#43;08:00" />
-<meta itemprop="wordCount" content="395">
+<meta itemprop="wordCount" content="396">
 
 
 
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="构建AssetBundle资源"/>
 <meta name="twitter:description" content="开始构建 AB 资源 收集所有需要打包资源的依赖关系。 根据资源间的依赖关系赋予资源一个 BundleName. 具体步骤 先附上收集依赖依赖关系的代码： 1 2 3 4 5 6 7 8 9 10 11"/>
 
@@ -134,32 +131,24 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#开始构建-ab-资源">开始构建 AB 资源</a></li>
-<li><a href="#具体步骤">具体步骤</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#-ab-">开始构建 AB 资源</a></li>
+    <li><a href="#heading">具体步骤</a></li>
+  </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      
-
-<h2 id="开始构建-ab-资源">开始构建 AB 资源</h2>
-
+      <h2 id="-ab-">开始构建 AB 资源</h2>
 <ul>
 <li>收集所有需要打包资源的依赖关系。</li>
 <li>根据资源间的依赖关系赋予资源一个 BundleName.</li>
 </ul>
-
-<h2 id="具体步骤">具体步骤</h2>
-
+<h2 id="heading">具体步骤</h2>
 <p>先附上收集依赖依赖关系的代码：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-c#" data-lang="c#"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -211,66 +200,66 @@
 </span><span class="lnt">50
 </span><span class="lnt">51
 </span><span class="lnt">52
+</span><span class="lnt">53
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c#" data-lang="c#">    <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="n">CollectABInfo</span><span class="p">()</span>
+<pre class="chroma"><code class="language-c#" data-lang="c#">    <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="n">CollectABInfo</span><span class="p">(</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="n">AssetDatabase</span><span class="p">.</span><span class="n">RemoveUnusedAssetBundleNames</span><span class="p">();</span>
-        <span class="kt">string</span><span class="na">[]</span> <span class="n">ABNames</span> <span class="p">=</span> <span class="n">AssetDatabase</span><span class="p">.</span><span class="n">GetAllAssetBundleNames</span><span class="p">();</span>
-        <span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="n">ABNode</span><span class="p">&gt;</span> <span class="n">AllABNodes</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="n">ABNode</span><span class="p">&gt;();</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">ABNames</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>    
+        <span class="n">AssetDatabase</span><span class="p">.</span><span class="n">RemoveUnusedAssetBundleNames</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+        <span class="kt">string</span><span class="p">[</span><span class="p">]</span> <span class="n">ABNames</span> <span class="p">=</span> <span class="n">AssetDatabase</span><span class="p">.</span><span class="n">GetAllAssetBundleNames</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+        <span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="n">ABNode</span><span class="p">&gt;</span> <span class="n">AllABNodes</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="n">ABNode</span><span class="p">&gt;</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">ABNames</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span> <span class="n">i</span><span class="p">+</span><span class="p">+</span><span class="p">)</span>    
 		<span class="p">{</span>
-            <span class="kt">string</span><span class="na">[]</span> <span class="n">ABPaths</span> <span class="p">=</span> <span class="n">AssetDatabase</span><span class="p">.</span><span class="n">GetAssetPathsFromAssetBundle</span><span class="p">(</span><span class="n">ABNames</span><span class="na">[i]</span><span class="p">);</span>
+            <span class="kt">string</span><span class="p">[</span><span class="p">]</span> <span class="n">ABPaths</span> <span class="p">=</span> <span class="n">AssetDatabase</span><span class="p">.</span><span class="n">GetAssetPathsFromAssetBundle</span><span class="p">(</span><span class="n">ABNames</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="p">)</span><span class="p">;</span>
             <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">abPath</span> <span class="k">in</span> <span class="n">ABPaths</span><span class="p">)</span>
             <span class="p">{</span>
-                <span class="n">ABNode</span> <span class="n">abNode</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ABNode</span><span class="p">(</span><span class="n">abPath</span><span class="p">.</span><span class="n">ToString</span><span class="p">(),</span> <span class="n">ABNames</span><span class="na">[i]</span><span class="p">);</span>
-                <span class="n">CollectAllDependcies</span><span class="p">(</span><span class="n">abNode</span><span class="p">,</span> <span class="n">AllABNodes</span><span class="p">);</span>
+                <span class="n">ABNode</span> <span class="n">abNode</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ABNode</span><span class="p">(</span><span class="n">abPath</span><span class="p">.</span><span class="n">ToString</span><span class="p">(</span><span class="p">)</span><span class="p">,</span> <span class="n">ABNames</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="p">)</span><span class="p">;</span>
+                <span class="n">CollectAllDependcies</span><span class="p">(</span><span class="n">abNode</span><span class="p">,</span> <span class="n">AllABNodes</span><span class="p">)</span><span class="p">;</span>
             <span class="p">}</span>   
 		<span class="p">}</span>
     <span class="p">}</span>
         
     <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="n">CollectAllDependcies</span><span class="p">(</span><span class="n">ABNode</span> <span class="n">abNode</span><span class="p">,</span><span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="n">ABNode</span><span class="p">&gt;</span> <span class="n">allABNodes</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">allABNodes</span><span class="p">.</span><span class="n">ContainsKey</span><span class="p">(</span><span class="n">abNode</span><span class="p">.</span><span class="n">AssetPath</span><span class="p">))</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">allABNodes</span><span class="p">.</span><span class="n">ContainsKey</span><span class="p">(</span><span class="n">abNode</span><span class="p">.</span><span class="n">AssetPath</span><span class="p">)</span><span class="p">)</span>
         <span class="p">{</span>
-            <span class="n">abNode</span> <span class="p">=</span> <span class="n">allABNodes</span><span class="na">[abNode.AssetPath]</span><span class="p">;</span>
+            <span class="n">abNode</span> <span class="p">=</span> <span class="n">allABNodes</span><span class="p">[</span><span class="n">abNode</span><span class="p">.</span><span class="n">AssetPath</span><span class="p">]</span><span class="p">;</span>
         <span class="p">}</span>
-        <span class="kt">string</span><span class="na">[]</span> <span class="n">Dependecies</span> <span class="p">=</span> <span class="n">AssetDatabase</span><span class="p">.</span><span class="n">GetDependencies</span><span class="p">(</span><span class="n">abNode</span><span class="p">.</span><span class="n">AssetPath</span><span class="p">,</span> <span class="k">false</span><span class="p">);</span> <span class="c1">//获取一个资源的依赖项
-</span><span class="c1"></span>        <span class="k">if</span> <span class="p">(</span><span class="n">Dependecies</span><span class="p">.</span><span class="n">Length</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span> 
+        <span class="kt">string</span><span class="p">[</span><span class="p">]</span> <span class="n">Dependecies</span> <span class="p">=</span> <span class="n">AssetDatabase</span><span class="p">.</span><span class="n">GetDependencies</span><span class="p">(</span><span class="n">abNode</span><span class="p">.</span><span class="n">AssetPath</span><span class="p">,</span> <span class="k">false</span><span class="p">)</span><span class="p">;</span> <span class="c1">//获取一个资源的依赖项
+</span><span class="c1"></span>        <span class="k">if</span> <span class="p">(</span><span class="n">Dependecies</span><span class="p">.</span><span class="n">Length</span> <span class="p">=</span><span class="p">=</span> <span class="m">0</span><span class="p">)</span> 
         <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">allABNodes</span><span class="p">.</span><span class="n">ContainsKey</span><span class="p">(</span><span class="n">abNode</span><span class="p">.</span><span class="n">AssetPath</span><span class="p">))</span>
-                <span class="n">allABNodes</span><span class="na">[abNode.AssetPath]</span> <span class="p">=</span> <span class="n">abNode</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">allABNodes</span><span class="p">.</span><span class="n">ContainsKey</span><span class="p">(</span><span class="n">abNode</span><span class="p">.</span><span class="n">AssetPath</span><span class="p">)</span><span class="p">)</span>
+                <span class="n">allABNodes</span><span class="p">[</span><span class="n">abNode</span><span class="p">.</span><span class="n">AssetPath</span><span class="p">]</span> <span class="p">=</span> <span class="n">abNode</span><span class="p">;</span>
             <span class="k">else</span>
-                <span class="n">allABNodes</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">abNode</span><span class="p">.</span><span class="n">AssetPath</span><span class="p">,</span> <span class="n">abNode</span><span class="p">);</span>
+                <span class="n">allABNodes</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">abNode</span><span class="p">.</span><span class="n">AssetPath</span><span class="p">,</span> <span class="n">abNode</span><span class="p">)</span><span class="p">;</span>
         <span class="p">}</span>
         <span class="k">else</span>
         <span class="p">{</span>
-            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">Dependecies</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">Dependecies</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span> <span class="n">i</span><span class="p">+</span><span class="p">+</span><span class="p">)</span>
             <span class="p">{</span>
 
-                <span class="n">ABNode</span> <span class="n">abDependicesNode</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ABNode</span><span class="p">(</span><span class="n">Dependecies</span><span class="na">[i]</span><span class="p">);</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">allABNodes</span><span class="p">.</span><span class="n">ContainsKey</span><span class="p">(</span><span class="n">abDependicesNode</span><span class="p">.</span><span class="n">AssetPath</span><span class="p">))</span>
+                <span class="n">ABNode</span> <span class="n">abDependicesNode</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ABNode</span><span class="p">(</span><span class="n">Dependecies</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="p">)</span><span class="p">;</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">allABNodes</span><span class="p">.</span><span class="n">ContainsKey</span><span class="p">(</span><span class="n">abDependicesNode</span><span class="p">.</span><span class="n">AssetPath</span><span class="p">)</span><span class="p">)</span>
                 <span class="p">{</span>
-                    <span class="n">abDependicesNode</span> <span class="p">=</span> <span class="n">allABNodes</span><span class="na">[abDependicesNode.AssetPath]</span><span class="p">;</span>
+                    <span class="n">abDependicesNode</span> <span class="p">=</span> <span class="n">allABNodes</span><span class="p">[</span><span class="n">abDependicesNode</span><span class="p">.</span><span class="n">AssetPath</span><span class="p">]</span><span class="p">;</span>
                 <span class="p">}</span>
-                <span class="n">abDependicesNode</span><span class="p">.</span><span class="n">AddBeDependcies</span><span class="p">(</span><span class="n">abNode</span><span class="p">.</span><span class="n">AssetPath</span><span class="p">);</span>
-                <span class="n">abDependicesNode</span><span class="p">.</span><span class="n">AddInheriedBundleName</span><span class="p">(</span><span class="n">abNode</span><span class="p">.</span><span class="n">InheritedABName</span><span class="p">);</span>
-                <span class="n">abNode</span><span class="p">.</span><span class="n">AddDependcies</span><span class="p">(</span><span class="n">Dependecies</span><span class="na">[i]</span><span class="p">);</span>
+                <span class="n">abDependicesNode</span><span class="p">.</span><span class="n">AddBeDependcies</span><span class="p">(</span><span class="n">abNode</span><span class="p">.</span><span class="n">AssetPath</span><span class="p">)</span><span class="p">;</span>
+                <span class="n">abDependicesNode</span><span class="p">.</span><span class="n">AddInheriedBundleName</span><span class="p">(</span><span class="n">abNode</span><span class="p">.</span><span class="n">InheritedABName</span><span class="p">)</span><span class="p">;</span>
+                <span class="n">abNode</span><span class="p">.</span><span class="n">AddDependcies</span><span class="p">(</span><span class="n">Dependecies</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="p">)</span><span class="p">;</span>
 
-                <span class="k">if</span> <span class="p">(</span><span class="n">allABNodes</span><span class="p">.</span><span class="n">ContainsKey</span><span class="p">(</span><span class="n">abNode</span><span class="p">.</span><span class="n">AssetPath</span><span class="p">))</span>
-                    <span class="n">allABNodes</span><span class="na">[abNode.AssetPath]</span> <span class="p">=</span> <span class="n">abNode</span><span class="p">;</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">allABNodes</span><span class="p">.</span><span class="n">ContainsKey</span><span class="p">(</span><span class="n">abNode</span><span class="p">.</span><span class="n">AssetPath</span><span class="p">)</span><span class="p">)</span>
+                    <span class="n">allABNodes</span><span class="p">[</span><span class="n">abNode</span><span class="p">.</span><span class="n">AssetPath</span><span class="p">]</span> <span class="p">=</span> <span class="n">abNode</span><span class="p">;</span>
                 <span class="k">else</span>
-                    <span class="n">allABNodes</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">abNode</span><span class="p">.</span><span class="n">AssetPath</span><span class="p">,</span> <span class="n">abNode</span><span class="p">);</span>
-                <span class="n">CollectAllDependcies</span><span class="p">(</span><span class="n">abDependicesNode</span><span class="p">,</span> <span class="n">allABNodes</span><span class="p">);</span>
+                    <span class="n">allABNodes</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">abNode</span><span class="p">.</span><span class="n">AssetPath</span><span class="p">,</span> <span class="n">abNode</span><span class="p">)</span><span class="p">;</span>
+                <span class="n">CollectAllDependcies</span><span class="p">(</span><span class="n">abDependicesNode</span><span class="p">,</span> <span class="n">allABNodes</span><span class="p">)</span><span class="p">;</span>
             <span class="p">}</span>   
         <span class="p">}</span>
-    <span class="p">}</span></code></pre></td></tr></table>
-</div>
-</div>
-<p>核心思路：由于需要给单独打包的依赖资源单独设置 BundleName,所以我们需要分辨哪些依赖资源需要被单独设置 BundleName</p>
+    <span class="p">}</span>
 
-<p><img src="/buildassetbundle1-1.png" alt="texture" /></p>
-
+</code></pre></td></tr></table>
+</div>
+</div><p>核心思路：由于需要给单独打包的依赖资源单独设置 BundleName,所以我们需要分辨哪些依赖资源需要被单独设置 BundleName</p>
+<p><img src="/buildassetbundle1-1.png" alt="texture"></p>
 <p>如上图所示，在本篇文章给出的脚本中也体现了这种设置 BundleName 的思想：根据依赖自己的带有 BundleName 的资源的 BundleName 的并集作为自己的BundleName,这样构建出来的 AB 就可以符合我们在 热更新开篇 的结尾处提交的问题。</p>
 
     </div>
@@ -293,7 +282,11 @@
 <footer class="post-footer">
       
       <nav class="post-nav">
-        
+        <a class="prev" href="/2020/02/06/buildab/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">2020 11 01 TextSpilt</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
         <a class="next" href="/2020/01/11/hitupdate/">
             <span class="next-text nav-default">热更新开篇</span>
             <span class="next-text nav-mobile">下一篇</span>
@@ -339,13 +332,10 @@
   <span class="copyright-year">
     &copy; 
     2019 - 
-    2020
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">黄圣博</span>
+    2020<span class="heart"><i class="iconfont icon-heart"></i></span><span>黄圣博</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">
@@ -356,7 +346,10 @@
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
 
 
 
