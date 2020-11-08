@@ -49,7 +49,7 @@
 <meta itemprop="description" content="问题 Unity UI Text 组件显示外文内容时会发生单词被截断 解决思路 当前句子加上最后一个单词的总宽度大于 Text 控件的宽度时，就将该句的最后一个单词放到下一句显示">
 <meta itemprop="datePublished" content="2020-11-01T21:23:17&#43;08:00" />
 <meta itemprop="dateModified" content="2020-11-01T21:23:17&#43;08:00" />
-<meta itemprop="wordCount" content="482">
+<meta itemprop="wordCount" content="479">
 
 
 
@@ -215,10 +215,10 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-lua" data-lang="lua">        <span class="o">//</span><span class="err">获</span><span class="err">取</span><span class="err">设</span><span class="err">置</span><span class="err">过</span><span class="err">换</span><span class="err">行</span><span class="err">符</span><span class="err">的</span><span class="err">文</span><span class="err">字</span>
-        <span class="o">//</span><span class="n">str</span><span class="p">:</span><span class="err">原</span><span class="err">文</span><span class="err">字</span><span class="n">ss</span>
+        <span class="o">//</span><span class="n">str</span><span class="p">:</span><span class="err">原</span><span class="err">文</span><span class="err">字</span>
         <span class="o">//</span><span class="n">width</span><span class="p">:</span><span class="n">Text</span> <span class="err">空</span><span class="err">间</span><span class="err">的</span><span class="err">宽</span><span class="err">度</span>
         <span class="o">//</span><span class="n">fontSize</span><span class="p">:</span> <span class="err">字</span><span class="err">体</span><span class="err">大</span><span class="err">小</span>
-        <span class="o">//</span><span class="n">text</span><span class="p">:</span><span class="err">当</span><span class="err">前</span><span class="err">的</span> <span class="n">Text</span> <span class="err">引</span><span class="err">用</span> <span class="n">sss</span>
+        <span class="o">//</span><span class="n">text</span><span class="p">:</span><span class="err">当</span><span class="err">前</span><span class="err">的</span> <span class="n">Text</span> <span class="err">引</span><span class="err">用</span>
         <span class="n">public</span> <span class="n">static</span> <span class="n">string</span> <span class="n">GetText</span><span class="p">(</span><span class="n">string</span> <span class="n">str</span><span class="p">,</span> <span class="n">float</span> <span class="n">width</span><span class="p">,</span><span class="n">int</span> <span class="n">fontSize</span><span class="p">,</span><span class="n">Text</span> <span class="n">text</span><span class="p">)</span>
         <span class="p">{</span>
             <span class="n">char</span><span class="p">[</span><span class="p">]</span> <span class="n">chars</span> <span class="o">=</span> <span class="n">str.ToCharArray</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
