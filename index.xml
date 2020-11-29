@@ -6,10 +6,19 @@
     <description>Recent content on 黄圣博的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 21 Nov 2020 18:48:06 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 29 Nov 2020 11:20:19 +0800</lastBuildDate>
     
 	<atom:link href="http://www.huangshengbo.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Psd To Prefab</title>
+      <link>http://www.huangshengbo.com/2020/11/29/psdtoprefab/</link>
+      <pubDate>Sun, 29 Nov 2020 11:20:19 +0800</pubDate>
+      
+      <guid>http://www.huangshengbo.com/2020/11/29/psdtoprefab/</guid>
+      <description>需求来源 最近项目中会涉及大量的 UI 修改，传统的 UI 做法是美术同学出效果图 （PSD）和对应的图素，并用 TexturePacker 工具导成 Unity 中的图集资源，然后程序同学或者美</description>
+    </item>
     
     <item>
       <title>在 Unity 中可以调用 Android 粘贴板的方法</title>

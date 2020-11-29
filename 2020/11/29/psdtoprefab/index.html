@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Psd To Prefab - 黄圣博的博客</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="黄圣博" /><meta name="description" content="需求来源 最近项目中会涉及大量的 UI 修改，传统的 UI 做法是美术同学出效果图 （PSD）和对应的图素，并用 TexturePacker 工具导成 Unity 中的图集资源，然后程序同学或者美" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.61.0 with theme even" />
+
+
+<link rel="canonical" href="http://www.huangshengbo.com/2020/11/29/psdtoprefab/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Psd To Prefab" />
+<meta property="og:description" content="需求来源 最近项目中会涉及大量的 UI 修改，传统的 UI 做法是美术同学出效果图 （PSD）和对应的图素，并用 TexturePacker 工具导成 Unity 中的图集资源，然后程序同学或者美" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.huangshengbo.com/2020/11/29/psdtoprefab/" />
+<meta property="article:published_time" content="2020-11-29T11:20:19+08:00" />
+<meta property="article:modified_time" content="2020-11-29T11:20:19+08:00" />
+<meta itemprop="name" content="Psd To Prefab">
+<meta itemprop="description" content="需求来源 最近项目中会涉及大量的 UI 修改，传统的 UI 做法是美术同学出效果图 （PSD）和对应的图素，并用 TexturePacker 工具导成 Unity 中的图集资源，然后程序同学或者美">
+<meta itemprop="datePublished" content="2020-11-29T11:20:19&#43;08:00" />
+<meta itemprop="dateModified" content="2020-11-29T11:20:19&#43;08:00" />
+<meta itemprop="wordCount" content="625">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Psd To Prefab"/>
+<meta name="twitter:description" content="需求来源 最近项目中会涉及大量的 UI 修改，传统的 UI 做法是美术同学出效果图 （PSD）和对应的图素，并用 TexturePacker 工具导成 Unity 中的图集资源，然后程序同学或者美"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Even</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Even</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Psd To Prefab</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-11-29 </span>
+        
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#heading">需求来源</a></li>
+    <li><a href="#heading-1">需求分析</a></li>
+    <li><a href="#heading-2">开发环境</a></li>
+    <li><a href="#heading-3">需求实现步骤</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="heading">需求来源</h2>
+<p>最近项目中会涉及大量的 UI 修改，传统的 UI 做法是美术同学出效果图 （PSD）和对应的图素，并用 TexturePacker 工具导成 Unity 中的图集资源，然后程序同学或者美术同学来拼 Unity 中的 UI,程序同学再补充 UI 的相关逻辑，为了减少在 Unity 中重复制作 UI 的步骤，达到缩短开发流程的目的， 需要将美术的 PSD 文件直接导成 UnityPrefab 资源。</p>
+<h2 id="heading-1">需求分析</h2>
+<ol>
+<li>需要给制作 PSD 的美术同学制定制作 PSD 的规范，包括层次结构和命名规则。</li>
+<li>根据上一步来将生成的 PSD 按照既定的制作规范，来导出序列化资源。</li>
+<li>将导出的序列化资源导入到 Unity 中，在生成对应的 Prefab 之前，需要将 PSD 中引用到图片使用 TexturePacker 进行构建。</li>
+<li>将生成的 Prefab 中所引用的图素，更换成 Unity 项目中所使用的图素。</li>
+</ol>
+<h2 id="heading-2">开发环境</h2>
+<p><strong>MacOS 14.5</strong></p>
+<p><strong>Unity2018.4</strong></p>
+<p><strong>Python3.9</strong></p>
+<p><strong>PSD To Prefab Tool: <a href="https://github.com/kyubuns/Baum2">https://github.com/kyubuns/Baum2</a></strong></p>
+<h2 id="heading-3">需求实现步骤</h2>
+<p>具体的 Psd To Prefab 工具在网上可以找到很多，包括在 AssetStore 上也有一些付费的工具。我在这使用的是开源的工具 Baum2 :  <a href="https://github.com/kyubuns/Baum2">https://github.com/kyubuns/Baum2</a>。具体的步骤在该链接里都有介绍。我详细说一下需求分析第三步该怎么做。</p>
+<p>直接放示例代码：</p>
+<p>C# 核心代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-C#" data-lang="C#">    <span class="kt">string</span> <span class="n">command</span> <span class="p">=</span> <span class="s">&#34;/Applications/Python 3.9/Python Launcher.app/Contents/MacOS/Python Launcher”; //对应的就是 pythonlauncher 所在的路径
+</span><span class="s"></span>    <span class="n">Process</span><span class="p">.</span><span class="n">Start</span><span class="p">(</span><span class="n">command</span><span class="p">,</span><span class="n">PythonName</span><span class="p">)</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Python 核心代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python">    <span class="n">tp_cmd</span> <span class="o">=</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">TexturePacker</span><span class="s2">&#34;</span> <span class="o">+</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2"> </span><span class="s2">&#34;</span> <span class="o">+</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">PSD 引用图片所在文件夹</span><span class="s2">&#34;</span> <span class="o">+</span>\
+         <span class="sa"></span><span class="s2">&#34;</span><span class="s2"> --data </span><span class="s2">&#34;</span> <span class="o">+</span>  <span class="sa"></span><span class="s2">&#34;</span><span class="s2">PSD 引用图片导出在 Unity 工程中的路径</span><span class="s2">&#34;</span> <span class="o">+</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">.tpsheet</span><span class="s2">&#34;</span>\
+         <span class="sa"></span><span class="s2">&#34;</span><span class="s2"> --sheet </span><span class="s2">&#34;</span> <span class="o">+</span>  <span class="sa"></span><span class="s2">&#34;</span><span class="s2">PSD 引用图片导出在 Unity 工程中的路径</span><span class="s2">&#34;</span> <span class="o">+</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">.png</span><span class="s2">&#34;</span>\
+         <span class="sa"></span><span class="s2">&#34;</span><span class="s2"> --format </span><span class="s2">&#34;</span> <span class="o">+</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">unity-texture2d</span><span class="s2">&#34;</span>\
+         <span class="sa"></span><span class="s2">&#34;</span><span class="s2"> --texture-format </span><span class="s2">&#34;</span> <span class="o">+</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">png</span><span class="s2">&#34;</span>\
+         <span class="sa"></span><span class="s2">&#34;</span><span class="s2"> --opt </span><span class="s2">&#34;</span> <span class="o">+</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">RGBA8888</span><span class="s2">&#34;</span>\
+         <span class="sa"></span><span class="s2">&#34;</span><span class="s2"> --max-size </span><span class="s2">&#34;</span> <span class="o">+</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">2048</span><span class="s2">&#34;</span>\
+         <span class="sa"></span><span class="s2">&#34;</span><span class="s2"> --size-constraints </span><span class="s2">&#34;</span> <span class="o">+</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">POT</span><span class="s2">&#34;</span>\
+         <span class="sa"></span><span class="s2">&#34;</span><span class="s2"> --force-squared </span><span class="s2">&#34;</span>\
+         <span class="sa"></span><span class="s2">&#34;</span><span class="s2"> --scale </span><span class="s2">&#34;</span> <span class="o">+</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">1</span><span class="s2">&#34;</span>\
+         <span class="sa"></span><span class="s2">&#34;</span><span class="s2"> --scale-mode </span><span class="s2">&#34;</span> <span class="o">+</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">Smooth</span><span class="s2">&#34;</span>\
+         <span class="sa"></span><span class="s2">&#34;</span><span class="s2"> --algorithm </span><span class="s2">&#34;</span> <span class="o">+</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">MaxRects</span><span class="s2">&#34;</span>\
+         <span class="sa"></span><span class="s2">&#34;</span><span class="s2"> --maxrects-heuristics </span><span class="s2">&#34;</span> <span class="o">+</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">Best</span><span class="s2">&#34;</span>\
+         <span class="sa"></span><span class="s2">&#34;</span><span class="s2"> --pack-mode </span><span class="s2">&#34;</span> <span class="o">+</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">Best</span><span class="s2">&#34;</span>\
+         <span class="sa"></span><span class="s2">&#34;</span><span class="s2"> --trim-mode </span><span class="s2">&#34;</span> <span class="o">+</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">None</span><span class="s2">&#34;</span>\
+         <span class="sa"></span><span class="s2">&#34;</span><span class="s2"> --trim-margin </span><span class="s2">&#34;</span> <span class="o">+</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">10</span><span class="s2">&#34;</span>\
+         <span class="sa"></span><span class="s2">&#34;</span><span class="s2"> --extrude </span><span class="s2">&#34;</span> <span class="o">+</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">1</span><span class="s2">&#34;</span>\
+         <span class="sa"></span><span class="s2">&#34;</span><span class="s2"> --border-padding </span><span class="s2">&#34;</span> <span class="o">+</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">0</span><span class="s2">&#34;</span>\
+         <span class="sa"></span><span class="s2">&#34;</span><span class="s2"> --shape-padding </span><span class="s2">&#34;</span> <span class="o">+</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">0</span><span class="s2">&#34;</span>\
+         <span class="sa"></span><span class="s2">&#34;</span><span class="s2"> --common-divisor-x </span><span class="s2">&#34;</span> <span class="o">+</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">1</span><span class="s2">&#34;</span>\
+         <span class="sa"></span><span class="s2">&#34;</span><span class="s2"> --common-divisor-y </span><span class="s2">&#34;</span> <span class="o">+</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">1</span><span class="s2">&#34;</span>\
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="n">tp_cmd</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">黄圣博</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2020-11-29
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        
+        <a class="next" href="/2020/11/21/androidcopy/">
+            <span class="next-text nav-default">在 Unity 中可以调用 Android 粘贴板的方法</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="http://m15136737050@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://www.huangshengbo.com" class="iconfont icon-google" title="google"></a>
+      <a href="http://github.com/huangshengbo5" class="iconfont icon-github" title="github"></a>
+  <a href="http://www.huangshengbo.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2019 - 
+    2020<span class="heart"><i class="iconfont icon-heart"></i></span><span>黄圣博</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
