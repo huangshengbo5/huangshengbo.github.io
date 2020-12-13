@@ -2,21 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.huangshengbo.com/post/</loc>
-    <lastmod>2020-11-29T11:20:19+08:00</lastmod>
+    <loc>http://www.huangshengbo.com/2020/12/13/learnpath/</loc>
+    <lastmod>2020-12-13T19:57:03+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://www.huangshengbo.com/2020/11/29/psdtoprefab/</loc>
-    <lastmod>2020-11-29T11:20:19+08:00</lastmod>
+    <loc>http://www.huangshengbo.com/post/</loc>
+    <lastmod>2020-12-13T19:57:03+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.huangshengbo.com/</loc>
+    <lastmod>2020-12-13T19:57:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.huangshengbo.com/2020/11/29/psdtoprefab/</loc>
     <lastmod>2020-11-29T11:20:19+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
