@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on 黄圣博的博客</title>
@@ -12,12 +12,12 @@
     
     
     <item>
-      <title>2020 12 13 LeatnPath</title>
+      <title>学习路线</title>
       <link>http://www.huangshengbo.com/2020/12/13/learnpath/</link>
       <pubDate>Sun, 13 Dec 2020 19:57:03 +0800</pubDate>
       
       <guid>http://www.huangshengbo.com/2020/12/13/learnpath/</guid>
-      <description>学习内容 英语 打字 计算机基础 ## 英语 学习英语是为了可以较无障碍的阅读外文文章，因为程序员所使用的开发软件大多都是国外所研发，包括很多新技术的文章</description>
+      <description>学习内容 1.英语 2.打字 3.计算机基础 英语 学习英语是为了可以较无障碍的阅读外文文章，因为程序员所使用的开发软件大多都是国外所研发，包括很多新</description>
     </item>
     
     <item>
@@ -44,7 +44,7 @@
       <pubDate>Sun, 08 Nov 2020 09:17:17 +0800</pubDate>
       
       <guid>http://www.huangshengbo.com/2020/11/08/enumconverttostring/</guid>
-      <description>问题 最近在项目中遇到需要用字符串来获取枚举的值，写下此篇做下总结。 代码实现 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 using System; public enum Test { Aaa = 1, Bbb =</description>
+      <description>问题 最近在项目中遇到需要用字符串来获取枚举的值，写下此篇做下总结。 代码实现 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 using System; public enum Test { Aaa = 1, Bbb = 2,</description>
     </item>
     
     <item>
@@ -63,6 +63,15 @@
       
       <guid>http://www.huangshengbo.com/2020/01/16/buildab/</guid>
       <description>开始构建 AB 资源 收集所有需要打包资源的依赖关系。 根据资源间的依赖关系赋予资源一个 BundleName. 具体步骤 先附上收集依赖依赖关系的代码： 1 2 3 4 5 6 7 8 9 10 11</description>
+    </item>
+    
+    <item>
+      <title>学习路线</title>
+      <link>http://www.huangshengbo.com/2020/01/14/animationissue/</link>
+      <pubDate>Tue, 14 Jan 2020 19:57:03 +0800</pubDate>
+      
+      <guid>http://www.huangshengbo.com/2020/01/14/animationissue/</guid>
+      <description>问题 最近项目需要转到pc端做页游开发，项目功能中模型展示的界面都比手游的要大，所以模型的动作中的抖动会更加明显。 原因 动作丢失精度导致 解决方案</description>
     </item>
     
     <item>

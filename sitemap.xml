@@ -1,22 +1,9 @@
-<?xml-stylesheet type="text/xsl" href="http://www.huangshengbo.com/sitemap.xsl"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
     <loc>http://www.huangshengbo.com/2020/12/13/learnpath/</loc>
-    <lastmod>2020-12-13T19:57:03+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.huangshengbo.com/post/</loc>
-    <lastmod>2020-12-13T19:57:03+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.huangshengbo.com/</loc>
     <lastmod>2020-12-13T19:57:03+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -58,6 +45,13 @@
   </url>
   
   <url>
+    <loc>http://www.huangshengbo.com/2020/01/14/animationissue/</loc>
+    <lastmod>2020-01-14T19:57:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://www.huangshengbo.com/2020/01/11/hitupdate/</loc>
     <lastmod>2020-01-11T20:32:41+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -81,13 +75,27 @@
   <url>
     <loc>http://www.huangshengbo.com/categories/</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.huangshengbo.com/post/</loc>
+    <lastmod>2020-12-13T19:57:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.huangshengbo.com/tags/</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.huangshengbo.com/</loc>
+    <lastmod>2020-12-13T19:57:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
   </url>
   
 </urlset>
