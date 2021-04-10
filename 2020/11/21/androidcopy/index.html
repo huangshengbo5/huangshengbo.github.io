@@ -23,10 +23,10 @@
 
 
 
-<meta name="generator" content="Hugo 0.61.0 with theme even" />
+<meta name="generator" content="Hugo 0.82.0 with theme even" />
 
 
-<link rel="canonical" href="http://www.huangshengbo.com/2020/11/21/androidcopy/" />
+<link rel="canonical" href="http://www.huangshengbo.com/2020/11/21/AndroidCopy/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -42,17 +42,14 @@
 <meta property="og:title" content="在 Unity 中可以调用 Android 粘贴板的方法" />
 <meta property="og:description" content="问题 最近需要实现一个可以在 Unity 打出的 APK 中复制一段文字到 Android 的剪切板中 开发环境 Android Studio 4.0 Gradle 2.10 Unity 5.6.6.f2 Android端 选择新建一个空工程 注意红框内的包名要和" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://www.huangshengbo.com/2020/11/21/androidcopy/" />
-<meta property="article:published_time" content="2020-11-21T18:48:06+08:00" />
-<meta property="article:modified_time" content="2020-11-21T18:48:06+08:00" />
+<meta property="og:url" content="http://www.huangshengbo.com/2020/11/21/AndroidCopy/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2020-11-21T18:48:06&#43;08:00" />
+<meta property="article:modified_time" content="2020-11-21T18:48:06&#43;08:00" />
+
 <meta itemprop="name" content="在 Unity 中可以调用 Android 粘贴板的方法">
-<meta itemprop="description" content="问题 最近需要实现一个可以在 Unity 打出的 APK 中复制一段文字到 Android 的剪切板中 开发环境 Android Studio 4.0 Gradle 2.10 Unity 5.6.6.f2 Android端 选择新建一个空工程 注意红框内的包名要和">
-<meta itemprop="datePublished" content="2020-11-21T18:48:06&#43;08:00" />
+<meta itemprop="description" content="问题 最近需要实现一个可以在 Unity 打出的 APK 中复制一段文字到 Android 的剪切板中 开发环境 Android Studio 4.0 Gradle 2.10 Unity 5.6.6.f2 Android端 选择新建一个空工程 注意红框内的包名要和"><meta itemprop="datePublished" content="2020-11-21T18:48:06&#43;08:00" />
 <meta itemprop="dateModified" content="2020-11-21T18:48:06&#43;08:00" />
 <meta itemprop="wordCount" content="637">
-
-
-
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="在 Unity 中可以调用 Android 粘贴板的方法"/>
 <meta name="twitter:description" content="问题 最近需要实现一个可以在 Unity 打出的 APK 中复制一段文字到 Android 的剪切板中 开发环境 Android Studio 4.0 Gradle 2.10 Unity 5.6.6.f2 Android端 选择新建一个空工程 注意红框内的包名要和"/>
@@ -90,12 +87,21 @@
         <li class="mobile-menu-item">Categories</li>
       </a>
   </ul>
+
+  
+
+
 </nav>
+
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
         <div class="logo-wrapper">
   <a href="/" class="logo">Even</a>
 </div>
+
+
+
+
 
 <nav class="site-navbar">
   <ul id="menu" class="menu">
@@ -110,6 +116,7 @@
       </li>
   </ul>
 </nav>
+
     </header>
 
     <main id="main" class="main">
@@ -132,22 +139,22 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#heading">问题</a></li>
-    <li><a href="#heading-1">开发环境</a></li>
-    <li><a href="#android">Android端</a></li>
-    <li><a href="#unity">Unity端</a></li>
+    <li><a href="#问题">问题</a></li>
+    <li><a href="#开发环境">开发环境</a></li>
+    <li><a href="#android端">Android端</a></li>
+    <li><a href="#unity端">Unity端</a></li>
   </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      <h2 id="heading">问题</h2>
+      <h2 id="问题">问题</h2>
 <p>最近需要实现一个可以在 Unity 打出的 APK 中复制一段文字到 Android 的剪切板中</p>
-<h2 id="heading-1">开发环境</h2>
+<h2 id="开发环境">开发环境</h2>
 <p><strong>Android Studio 4.0</strong></p>
 <p><strong>Gradle 2.10</strong></p>
 <p><strong>Unity 5.6.6.f2</strong></p>
-<h2 id="android">Android端</h2>
+<h2 id="android端">Android端</h2>
 <ol>
 <li>选择新建一个空工程</li>
 </ol>
@@ -211,17 +218,17 @@
 
     <span class="nd">@Override</span>
     <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">)</span><span class="o">;</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
     <span class="o">}</span>
     
     <span class="kd">public</span> <span class="kd">static</span> <span class="n">ClipboardManager</span> <span class="n">clipboard</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
     
     <span class="c1">//进行复制的脚本
 </span><span class="c1"></span>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">copyTextToClipboard</span><span class="o">(</span><span class="n">Context</span> <span class="n">activity</span><span class="o">,</span> <span class="n">String</span> <span class="n">str</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
-        <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&#34;pow&#34;</span><span class="o">,</span> <span class="s">&#34;copyTextToClipboard str:&#34;</span> <span class="o">+</span> <span class="n">str</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">clipboard</span> <span class="o">=</span> <span class="o">(</span><span class="n">ClipboardManager</span><span class="o">)</span> <span class="n">activity</span><span class="o">.</span><span class="na">getSystemService</span><span class="o">(</span><span class="n">Activity</span><span class="o">.</span><span class="na">CLIPBOARD_SERVICE</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">ClipData</span> <span class="n">clipData</span> <span class="o">=</span> <span class="n">ClipData</span><span class="o">.</span><span class="na">newPlainText</span><span class="o">(</span><span class="s">&#34;data&#34;</span><span class="o">,</span> <span class="n">str</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">clipboard</span><span class="o">.</span><span class="na">setPrimaryClip</span><span class="o">(</span><span class="n">clipData</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&#34;pow&#34;</span><span class="o">,</span> <span class="s">&#34;copyTextToClipboard str:&#34;</span> <span class="o">+</span> <span class="n">str</span><span class="o">);</span>
+        <span class="n">clipboard</span> <span class="o">=</span> <span class="o">(</span><span class="n">ClipboardManager</span><span class="o">)</span> <span class="n">activity</span><span class="o">.</span><span class="na">getSystemService</span><span class="o">(</span><span class="n">Activity</span><span class="o">.</span><span class="na">CLIPBOARD_SERVICE</span><span class="o">);</span>
+        <span class="n">ClipData</span> <span class="n">clipData</span> <span class="o">=</span> <span class="n">ClipData</span><span class="o">.</span><span class="na">newPlainText</span><span class="o">(</span><span class="s">&#34;data&#34;</span><span class="o">,</span> <span class="n">str</span><span class="o">);</span>
+        <span class="n">clipboard</span><span class="o">.</span><span class="na">setPrimaryClip</span><span class="o">(</span><span class="n">clipData</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></td></tr></table>
@@ -246,7 +253,7 @@
 </ol>
 <p>此时的 aar 文件可以改后缀为 .zip ，删除 libs 下的 classes.jar 文件，否则在 Unity 构建 APK 时会报错。
 至此 android 端的工作完成。</p>
-<h2 id="unity">Unity端</h2>
+<h2 id="unity端">Unity端</h2>
 <ol>
 <li>Copy 代码</li>
 </ol>
@@ -291,27 +298,27 @@
 <span class="k">using</span> <span class="nn">UnityEngine.UI</span><span class="p">;</span>
 <span class="k">public</span> <span class="k">class</span> <span class="nc">SDKTest</span>  <span class="p">:</span><span class="n">MonoBehaviour</span><span class="p">{</span>
     <span class="k">public</span> <span class="n">Button</span> <span class="n">btn</span><span class="p">;</span>
-    <span class="k">void</span> <span class="n">Start</span><span class="p">(</span><span class="p">)</span>
+    <span class="k">void</span> <span class="n">Start</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="n">btn</span><span class="p">.</span><span class="n">onClick</span><span class="p">.</span><span class="n">AddListener</span><span class="p">(</span><span class="n">OnBtnOnClick</span><span class="p">)</span><span class="p">;</span>
+        <span class="n">btn</span><span class="p">.</span><span class="n">onClick</span><span class="p">.</span><span class="n">AddListener</span><span class="p">(</span><span class="n">OnBtnOnClick</span><span class="p">);</span>
     <span class="p">}</span>
-    <span class="k">public</span> <span class="k">void</span> <span class="n">OnBtnOnClick</span><span class="p">(</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">void</span> <span class="n">OnBtnOnClick</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="n">Debug</span><span class="p">.</span><span class="n">LogError</span><span class="p">(</span><span class="s">&#34;OnBtnOnClick  Start&#34;</span><span class="p">)</span><span class="p">;</span>
+        <span class="n">Debug</span><span class="p">.</span><span class="n">LogError</span><span class="p">(</span><span class="s">&#34;OnBtnOnClick  Start&#34;</span><span class="p">);</span>
         <span class="kt">string</span> <span class="n">str</span> <span class="p">=</span> <span class="s">&#34;This is need copy message&#34;</span><span class="p">;</span>
 <span class="cp">#if UNITY_EDITOR
-</span><span class="cp"></span>        <span class="kt">var</span> <span class="n">textEditor</span> <span class="p">=</span> <span class="k">new</span> <span class="n">TextEditor</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+</span><span class="cp"></span>        <span class="kt">var</span> <span class="n">textEditor</span> <span class="p">=</span> <span class="k">new</span> <span class="n">TextEditor</span><span class="p">();</span>
         <span class="n">textEditor</span><span class="p">.</span><span class="n">text</span> <span class="p">=</span> <span class="n">str</span><span class="p">;</span>
-        <span class="n">textEditor</span><span class="p">.</span><span class="n">OnFocus</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
-        <span class="n">textEditor</span><span class="p">.</span><span class="n">SelectAll</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
-        <span class="n">textEditor</span><span class="p">.</span><span class="n">Copy</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+        <span class="n">textEditor</span><span class="p">.</span><span class="n">OnFocus</span><span class="p">();</span>
+        <span class="n">textEditor</span><span class="p">.</span><span class="n">SelectAll</span><span class="p">();</span>
+        <span class="n">textEditor</span><span class="p">.</span><span class="n">Copy</span><span class="p">();</span>
         <span class="c1">//方法二
 </span><span class="c1"></span>        <span class="n">GUIUtility</span><span class="p">.</span><span class="n">systemCopyBuffer</span> <span class="p">=</span> <span class="n">str</span><span class="p">;</span>
 <span class="cp">#elif UNITY_ANDROID
-</span><span class="cp"></span>        <span class="n">Debug</span><span class="p">.</span><span class="n">LogError</span><span class="p">(</span><span class="s">&#34;OnBtnOnClick Android&#34;</span><span class="p">)</span><span class="p">;</span>
-        <span class="n">AndroidJavaClass</span> <span class="n">jc</span> <span class="p">=</span> <span class="k">new</span>  <span class="n">AndroidJavaClass</span><span class="p">(</span><span class="s">&#34;com.unity3d.player.UnityPlayer&#34;</span><span class="p">)</span><span class="p">;</span>
-        <span class="n">AndroidJavaObject</span> <span class="n">jo</span> <span class="p">=</span>  <span class="n">jc</span><span class="p">.</span><span class="n">GetStatic</span><span class="p">&lt;</span><span class="n">AndroidJavaObject</span><span class="p">&gt;</span><span class="p">(</span><span class="s">&#34;currentActivity&#34;</span><span class="p">)</span><span class="p">;</span>
-        <span class="n">jo</span><span class="p">.</span><span class="n">Call</span><span class="p">(</span><span class="s">&#34;copyTextToClipboard&#34;</span><span class="p">,</span> <span class="n">jo</span><span class="p">,</span> <span class="n">str</span><span class="p">)</span><span class="p">;</span>
+</span><span class="cp"></span>        <span class="n">Debug</span><span class="p">.</span><span class="n">LogError</span><span class="p">(</span><span class="s">&#34;OnBtnOnClick Android&#34;</span><span class="p">);</span>
+        <span class="n">AndroidJavaClass</span> <span class="n">jc</span> <span class="p">=</span> <span class="k">new</span>  <span class="n">AndroidJavaClass</span><span class="p">(</span><span class="s">&#34;com.unity3d.player.UnityPlayer&#34;</span><span class="p">);</span>
+        <span class="n">AndroidJavaObject</span> <span class="n">jo</span> <span class="p">=</span>  <span class="n">jc</span><span class="p">.</span><span class="n">GetStatic</span><span class="p">&lt;</span><span class="n">AndroidJavaObject</span><span class="p">&gt;(</span><span class="s">&#34;currentActivity&#34;</span><span class="p">);</span>
+        <span class="n">jo</span><span class="p">.</span><span class="n">Call</span><span class="p">(</span><span class="s">&#34;copyTextToClipboard&#34;</span><span class="p">,</span> <span class="n">jo</span><span class="p">,</span> <span class="n">str</span><span class="p">);</span>
 <span class="cp">#endif
 </span><span class="cp"></span>    <span class="p">}</span>
 <span class="p">}</span>
@@ -344,12 +351,12 @@
 <footer class="post-footer">
       
       <nav class="post-nav">
-        <a class="prev" href="/2020/11/29/psdtoprefab/">
+        <a class="prev" href="/2020/11/29/PsdToPrefab/">
             <i class="iconfont icon-left"></i>
             <span class="prev-text nav-default">Psd To Prefab</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
-        <a class="next" href="/2020/11/08/enumconverttostring/">
+        <a class="next" href="/2020/11/08/EnumConVertToString/">
             <span class="next-text nav-default">C# 枚举类型和字符串之间的转换</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
@@ -394,7 +401,7 @@
   <span class="copyright-year">
     &copy; 
     2019 - 
-    2020<span class="heart"><i class="iconfont icon-heart"></i></span><span>黄圣博</span>
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>黄圣博</span>
   </span>
 </div>
 
@@ -411,7 +418,7 @@
 
 
 
-<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
 
 
 

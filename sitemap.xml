@@ -1,37 +1,50 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet type="text/xsl" href="http://www.huangshengbo.com/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.huangshengbo.com/2020/12/13/learnpath/</loc>
+    <loc>http://www.huangshengbo.com/post/</loc>
     <lastmod>2020-12-13T19:57:03+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://www.huangshengbo.com/2020/11/29/psdtoprefab/</loc>
+    <loc>http://www.huangshengbo.com/2020/12/13/LearnPath/</loc>
+    <lastmod>2020-12-13T19:57:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.huangshengbo.com/</loc>
+    <lastmod>2020-12-13T19:57:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.huangshengbo.com/2020/11/29/PsdToPrefab/</loc>
     <lastmod>2020-11-29T11:20:19+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://www.huangshengbo.com/2020/11/21/androidcopy/</loc>
+    <loc>http://www.huangshengbo.com/2020/11/21/AndroidCopy/</loc>
     <lastmod>2020-11-21T18:48:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://www.huangshengbo.com/2020/11/08/enumconverttostring/</loc>
+    <loc>http://www.huangshengbo.com/2020/11/08/EnumConVertToString/</loc>
     <lastmod>2020-11-08T09:17:17+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://www.huangshengbo.com/2020/11/01/textsplit/</loc>
+    <loc>http://www.huangshengbo.com/2020/11/01/TextSplit/</loc>
     <lastmod>2020-11-01T21:23:17+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -45,14 +58,14 @@
   </url>
   
   <url>
-    <loc>http://www.huangshengbo.com/2020/01/14/animationissue/</loc>
+    <loc>http://www.huangshengbo.com/2020/01/14/AnimationIssue/</loc>
     <lastmod>2020-01-14T19:57:03+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://www.huangshengbo.com/2020/01/11/hitupdate/</loc>
+    <loc>http://www.huangshengbo.com/2020/01/11/HitUpdate/</loc>
     <lastmod>2020-01-11T20:32:41+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -66,7 +79,7 @@
   </url>
   
   <url>
-    <loc>http://www.huangshengbo.com/2019/12/12/learnrecord/</loc>
+    <loc>http://www.huangshengbo.com/2019/12/12/LearnRecord/</loc>
     <lastmod>2019-12-12T17:08:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -75,27 +88,13 @@
   <url>
     <loc>http://www.huangshengbo.com/categories/</loc>
     <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.huangshengbo.com/post/</loc>
-    <lastmod>2020-12-13T19:57:03+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.huangshengbo.com/tags/</loc>
     <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.huangshengbo.com/</loc>
-    <lastmod>2020-12-13T19:57:03+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
+    <priority>0.5</priority>
   </url>
   
 </urlset>
