@@ -122,6 +122,25 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2020/11/01/TextSplit/">Unity UI Text 外文显示单词适配</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2020-11-01 </span>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      问题 Unity UI Text 组件显示外文内容时会发生单词被截断 解决思路 当前句子加上最后一个单词的总宽度大于 Text 控件的宽度时，就将该句的最后一个单词放到下一句显示
+    </div>
+    <div class="read-more">
+      <a href="/2020/11/01/TextSplit/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/2020/01/16/buildab/">构建AssetBundle资源</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2020-01-16 </span>
@@ -196,25 +215,6 @@
   </div>
 </article>
 
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2019/12/12/LearnRecord/">Mask裁剪UI粒子特效</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2019-12-12 </span>
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      最近在项目遇到一个问题，加上最近刚看完 Shader 入门到精通 ，所有借此来研究一下这个问题。 核心原理 GPU 每次刷新屏幕时，会重新计算物体上的 Shader 中的顶点着色器
-    </div>
-    <div class="read-more">
-      <a href="/2019/12/12/LearnRecord/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
     </section>
   
   <nav class="pagination">
@@ -222,7 +222,10 @@
         <i class="iconfont icon-left"></i>
         <span class="prev-text">上一页</span>
       </a>
-    
+    <a class="next" href="/page/3/">
+        <span class="next-text">下一页</span>
+        <i class="iconfont icon-right"></i>
+      </a>
   </nav>
         </div>
         

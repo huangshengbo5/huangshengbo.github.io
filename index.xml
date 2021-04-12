@@ -6,7 +6,16 @@
     <description>Recent content on 黄圣博的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 13 Dec 2020 19:57:03 +0800</lastBuildDate><atom:link href="http://www.huangshengbo.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 12 Apr 2021 19:57:03 +0800</lastBuildDate><atom:link href="http://www.huangshengbo.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>《Unity 游戏优化》阅读笔记</title>
+      <link>http://www.huangshengbo.com/2021/04/12/ReadingRecord/</link>
+      <pubDate>Mon, 12 Apr 2021 19:57:03 +0800</pubDate>
+      
+      <guid>http://www.huangshengbo.com/2021/04/12/ReadingRecord/</guid>
+      <description>优化核心思想 1.过早的优化是万恶之源。（在可验证的情况下进行优化和重构） 2.逻辑优化的最简洁列表： 验证目标脚本是否出现在场景中。 验证脚本在场</description>
+    </item>
+    
     <item>
       <title>学习路线</title>
       <link>http://www.huangshengbo.com/2020/12/13/LearnPath/</link>
