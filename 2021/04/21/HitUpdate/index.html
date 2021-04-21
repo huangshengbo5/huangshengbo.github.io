@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>《Unity 游戏优化》阅读笔记 - 黄圣博的博客</title>
+  <title>热更新开篇 - 黄圣博的博客</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="黄圣博" /><meta name="description" content="优化核心思想 1.过早的优化是万恶之源。（在可验证的情况下进行优化和重构） 2.逻辑优化的最简洁列表： 验证目标脚本是否出现在场景中。 验证脚本在场" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="黄圣博" /><meta name="description" content="为什么要纠结于热更新 Unity 自带的 BuildPipeline.BuildAssetBundles() 就是构建 AB 文件的接口，但是 Unity 自己并不会将资源的依赖关系管理起来，因此会导致资源的冗余。具体情况请往下看： 我先新" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.82.0 with theme even" />
 
 
-<link rel="canonical" href="http://www.huangshengbo.com/2021/04/12/ReadingRecord/" />
+<link rel="canonical" href="http://www.huangshengbo.com/2021/04/21/HitUpdate/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,20 +39,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="《Unity 游戏优化》阅读笔记" />
-<meta property="og:description" content="优化核心思想 1.过早的优化是万恶之源。（在可验证的情况下进行优化和重构） 2.逻辑优化的最简洁列表： 验证目标脚本是否出现在场景中。 验证脚本在场" />
+<meta property="og:title" content="热更新开篇" />
+<meta property="og:description" content="为什么要纠结于热更新 Unity 自带的 BuildPipeline.BuildAssetBundles() 就是构建 AB 文件的接口，但是 Unity 自己并不会将资源的依赖关系管理起来，因此会导致资源的冗余。具体情况请往下看： 我先新" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://www.huangshengbo.com/2021/04/12/ReadingRecord/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-04-12T19:57:03&#43;08:00" />
-<meta property="article:modified_time" content="2021-04-12T19:57:03&#43;08:00" />
+<meta property="og:url" content="http://www.huangshengbo.com/2021/04/21/HitUpdate/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-04-21T22:53:58&#43;08:00" />
+<meta property="article:modified_time" content="2021-04-21T22:53:58&#43;08:00" />
 
-<meta itemprop="name" content="《Unity 游戏优化》阅读笔记">
-<meta itemprop="description" content="优化核心思想 1.过早的优化是万恶之源。（在可验证的情况下进行优化和重构） 2.逻辑优化的最简洁列表： 验证目标脚本是否出现在场景中。 验证脚本在场"><meta itemprop="datePublished" content="2021-04-12T19:57:03&#43;08:00" />
-<meta itemprop="dateModified" content="2021-04-12T19:57:03&#43;08:00" />
-<meta itemprop="wordCount" content="764">
+<meta itemprop="name" content="热更新开篇">
+<meta itemprop="description" content="为什么要纠结于热更新 Unity 自带的 BuildPipeline.BuildAssetBundles() 就是构建 AB 文件的接口，但是 Unity 自己并不会将资源的依赖关系管理起来，因此会导致资源的冗余。具体情况请往下看： 我先新"><meta itemprop="datePublished" content="2021-04-21T22:53:58&#43;08:00" />
+<meta itemprop="dateModified" content="2021-04-21T22:53:58&#43;08:00" />
+<meta itemprop="wordCount" content="769">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="《Unity 游戏优化》阅读笔记"/>
-<meta name="twitter:description" content="优化核心思想 1.过早的优化是万恶之源。（在可验证的情况下进行优化和重构） 2.逻辑优化的最简洁列表： 验证目标脚本是否出现在场景中。 验证脚本在场"/>
+<meta name="twitter:title" content="热更新开篇"/>
+<meta name="twitter:description" content="为什么要纠结于热更新 Unity 自带的 BuildPipeline.BuildAssetBundles() 就是构建 AB 文件的接口，但是 Unity 自己并不会将资源的依赖关系管理起来，因此会导致资源的冗余。具体情况请往下看： 我先新"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -125,12 +125,12 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">《Unity 游戏优化》阅读笔记</h1>
+      <h1 class="post-title">热更新开篇</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2021-04-12 </span>
+        <span class="post-time"> 2021-04-21 </span>
         
-          <span class="more-meta"> 约 764 字 </span>
+          <span class="more-meta"> 约 769 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -141,68 +141,25 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#优化核心思想">优化核心思想</a></li>
-    <li><a href="#脚本优化">脚本优化</a></li>
-    <li><a href="#关于-unity-中的-mono">关于 Unity 中的 Mono</a></li>
-    <li><a href="#关于托管代码和本地代码">关于托管代码和本地代码</a></li>
+    <li><a href="#为什么要纠结于热更新">为什么要纠结于热更新</a></li>
   </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      <h2 id="优化核心思想">优化核心思想</h2>
-<p>1.过早的优化是万恶之源。（在可验证的情况下进行优化和重构）</p>
-<p>2.逻辑优化的最简洁列表：</p>
-<ol>
-<li>验证目标脚本是否出现在场景中。</li>
-<li>验证脚本在场景中出现的次数是否正确。</li>
-<li>验证脚本的正确顺序。</li>
-<li>最小化正在进行的代码更改。</li>
-<li>尽量减少内部干扰。</li>
-<li>尽量减少外部干扰。</li>
-</ol>
-<h2 id="脚本优化">脚本优化</h2>
-<ol>
-<li>
-<p>GetComponent<!-- raw HTML omitted -->() 比 GetComponent(string name) 性能优越。避免产品中使用 GetComponent(string name)。</p>
-</li>
-<li>
-<p>使用 .CompareTag() 替换 .tag == “XX” 方法。</p>
-</li>
-<li>
-<p>使用 Instantiate(gameobject,transform) 代替 Instantiate(gameobject).SetParent(transform).  因为Unity 5.4 以后 Transform 的层次结构改成了动态数组，初始化 GameObject 后再改变它的父节点，会使得当前父节点的 Transform 对应的缓存动态数组发生改变。</p>
-</li>
-<li>
-<p>通过使用距离平方而不是距离禁用对象：方法为 OnBecameVisible() 和 OnBecameInvisible(), GameOject 还必须附加一个可渲染的组件，例如 MeshRenderer 或者 SKinnedMeshRenderer 来触发可见性回调，因为该回调必须与渲染管道通信。</p>
-</li>
-<li>
-<p>协程会在包含他的 GameObject 变成不活动的那一刻自动停止，如果 GameObject 再次被设置为活动的，协程不会自动重新启动。</p>
-</li>
-<li>
-<p>Update 跟当前平台的帧数有关，FixedUpdate 是真实时间，所以处理物理逻辑的时候要把代码放在 FixedUpdate 而不是 Update。</p>
-</li>
-</ol>
-<h2 id="关于-unity-中的-mono">关于 Unity 中的 Mono</h2>
-<p>Mono 是一个允许使用通用编程语言编写的代码可以运行在很多不同硬件平台上的开源框架。本质上，它是 .NET 类库的开源重制。mono 仅仅是 Unity 底层的一部分。</p>
-<h2 id="关于托管代码和本地代码">关于托管代码和本地代码</h2>
-<ol>
-<li>
-<p>本地代码：比如 c/c++,  经过编译后生成汇编码，直接在 CPU 上运行，但是由于不同的硬件架构和操作系统，会导致不同的 CPU 支持的指令可能不同，这两种语言的移植很麻烦，
-但是执行效率高。</p>
-</li>
-<li>
-<p>托管代码：比如 Java,  使用本身框架的虚拟机，来屏蔽底层硬件和操作系统的不同，代码先经过虚拟机编译成中间语言，然后虚拟机将这些中间语言转换成其所在平台可以执行的本地机器码。</p>
-</li>
-<li>
-<p>外部库：DirectX,OpenGL 库，也包含项目中包含的很多自定义库和插件。</p>
-</li>
-<li>
-<p>托管代码调用本地代码，和托管代码调用外部库均会导致内存上下文切换。</p>
-</li>
-<li>
-<p>托管代码(unity C#)的 GC 由 Mono 来执行。所以 Unity 上的 GC 其实指的是 Mono 的 GC 过程。</p>
-</li>
-</ol>
+      <h2 id="为什么要纠结于热更新">为什么要纠结于热更新</h2>
+<p>Unity 自带的 BuildPipeline.BuildAssetBundles() 就是构建 AB 文件的接口，但是 Unity 自己并不会将资源的依赖关系管理起来，因此会导致资源的冗余。具体情况请往下看：</p>
+<p>我先新建两个预制体，分别命名为 Cube 和 Spere ,并且分别加上与之名称相对应的 AssetBundle 名称，然后我又新建了一个材质名为 Blue,并修改材质颜色，并将该材质赋给前面的两个预制体。然后启动构建AB脚本，结果如下：</p>
+<p><img src="/hotupdate1.png" alt="texture"></p>
+<p><img src="/hotupdate3.png" alt="texture"></p>
+<p>然后我再将 Blue 材质加上名为 blue 的 AB 名称，在运行一遍 AB 构建脚本，结果如下：</p>
+<p><img src="/hotupdate2.png" alt="texture"></p>
+<p><img src="/hotupdate4.png" alt="texture"></p>
+<p>可见当材质 Blue 没有设置 BundleName 的时候，它的被依赖项 Cube 和 Sphere 构建出的 AB 文件都有一份材质 Blue 资源。但是当材质 Blue 设置了自己的 BlundleName 后就可以把自己的资源单独构建一份 AB 文件。而且在材质 Blue 没有设置 BundleName 前， Cube 和 Spere 对应的构建出的 manifeste 文件中没有对材质 Blue 的依赖信息，但是当材质 Blue 设置自己的 BunldNmame后就出现对应的依赖信息。</p>
+<p>由此可见 Unity 是根据资源的是否设置了 BundleName 来构建资源信息的，但是这样会造成 AB 资源的冗余(上述两种方式构建结果 AB 文件大小相差 37 kb),所以我们需要在构造 AB 文件前自己去找到资源间的依赖关系，减少这种资源上的冗余。</p>
+<p>再开始动手解决这个问题前，我们需要先考虑如何避免这种冗余问题，表面上是给需要设定 BundleName 的资源正确设定 BundleName。但是如何判断某个资源是否需要设定 BundleName？我们先看一个资源间的依赖关系图实例，来帮助更好的理解如何解决上述问题。</p>
+<p><img src="/hotupdate1-1.png" alt="texture"></p>
+<p>在上图中只有资源 A 和资源 B 有自己的 BundleName，但是这两个资源间会有资源依赖的重叠，比如资源 A 依赖的 D 和 E 也被资源 B 依赖，但是资源 C 只被资源 A 依赖。如果我们没有将无 BundleName 的资源 C D E 设置BundleName直接构建AB文件的话会发生什么，结果就是会构架出两个AB文件，并且构建出来的以 A 为 BundleName 的 AB 文件中会有资源 DE 的信息，同样以 B 为 BundleName 的 AB 文件中也会有资源 DE 的信息，因此最好的办法是将资源 DE 作为一个 AB 资源进行构建。</p>
 
     </div>
 
@@ -214,7 +171,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2021-04-12
+        2021-04-21
         
     </span>
   </p>
@@ -224,13 +181,13 @@
 <footer class="post-footer">
       
       <nav class="post-nav">
-        <a class="prev" href="/2021/04/21/LearnPath/">
+        <a class="prev" href="/2021/04/21/LearnRecord/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">学习路线</span>
+            <span class="prev-text nav-default">Mask裁剪UI粒子特效</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
-        <a class="next" href="/2020/02/06/buildab/">
-            <span class="next-text nav-default">热更新第二篇</span>
+        <a class="next" href="/2021/04/21/TextSplit/">
+            <span class="next-text nav-default">Unity UI Text 外文显示单词适配</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>

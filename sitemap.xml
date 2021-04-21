@@ -2,21 +2,63 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.huangshengbo.com/post/</loc>
-    <lastmod>2021-04-21T22:43:53+08:00</lastmod>
+    <loc>http://www.huangshengbo.com/2021/04/21/LearnRecord/</loc>
+    <lastmod>2021-04-21T22:55:14+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://www.huangshengbo.com/post/2020-04-21-learnpath/</loc>
-    <lastmod>2021-04-21T22:43:53+08:00</lastmod>
+    <loc>http://www.huangshengbo.com/post/</loc>
+    <lastmod>2021-04-21T22:55:14+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.huangshengbo.com/</loc>
+    <lastmod>2021-04-21T22:55:14+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.huangshengbo.com/2021/04/21/HitUpdate/</loc>
+    <lastmod>2021-04-21T22:53:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.huangshengbo.com/2021/04/21/TextSplit/</loc>
+    <lastmod>2021-04-21T22:52:55+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.huangshengbo.com/2021/04/21/EnumConVertToString/</loc>
+    <lastmod>2021-04-21T22:51:55+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.huangshengbo.com/2021/04/21/AndroidCopy/</loc>
+    <lastmod>2021-04-21T22:50:16+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.huangshengbo.com/2021/04/21/PsdToPrefab/</loc>
+    <lastmod>2021-04-21T22:48:32+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.huangshengbo.com/2021/04/21/LearnPath/</loc>
     <lastmod>2021-04-21T22:43:53+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -30,29 +72,8 @@
   </url>
   
   <url>
-    <loc>http://www.huangshengbo.com/2020/11/29/PsdToPrefab/</loc>
-    <lastmod>2020-11-29T11:20:19+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.huangshengbo.com/2020/11/21/AndroidCopy/</loc>
-    <lastmod>2020-11-21T18:48:06+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.huangshengbo.com/2020/11/08/EnumConVertToString/</loc>
-    <lastmod>2020-11-08T09:17:17+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.huangshengbo.com/2020/11/01/TextSplit/</loc>
-    <lastmod>2020-11-01T21:23:17+08:00</lastmod>
+    <loc>http://www.huangshengbo.com/2020/02/06/buildab/</loc>
+    <lastmod>2020-02-06T21:23:17+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -72,22 +93,8 @@
   </url>
   
   <url>
-    <loc>http://www.huangshengbo.com/2020/01/11/HitUpdate/</loc>
-    <lastmod>2020-01-11T20:32:41+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://www.huangshengbo.com/2019/12/17/hugo-setup/</loc>
     <lastmod>2019-12-17T19:57:11+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.huangshengbo.com/2019/12/12/LearnRecord/</loc>
-    <lastmod>2019-12-12T17:08:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

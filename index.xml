@@ -6,13 +6,67 @@
     <description>Recent content on 黄圣博的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 21 Apr 2021 22:43:53 +0800</lastBuildDate><atom:link href="http://www.huangshengbo.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 21 Apr 2021 22:55:14 +0800</lastBuildDate><atom:link href="http://www.huangshengbo.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mask裁剪UI粒子特效</title>
+      <link>http://www.huangshengbo.com/2021/04/21/LearnRecord/</link>
+      <pubDate>Wed, 21 Apr 2021 22:55:14 +0800</pubDate>
+      
+      <guid>http://www.huangshengbo.com/2021/04/21/LearnRecord/</guid>
+      <description>最近在项目遇到一个问题，加上最近刚看完 Shader 入门到精通 ，所有借此来研究一下这个问题。 核心原理 GPU 每次刷新屏幕时，会重新计算物体上的 Shader 中的顶点着色器</description>
+    </item>
+    
+    <item>
+      <title>热更新开篇</title>
+      <link>http://www.huangshengbo.com/2021/04/21/HitUpdate/</link>
+      <pubDate>Wed, 21 Apr 2021 22:53:58 +0800</pubDate>
+      
+      <guid>http://www.huangshengbo.com/2021/04/21/HitUpdate/</guid>
+      <description>为什么要纠结于热更新 Unity 自带的 BuildPipeline.BuildAssetBundles() 就是构建 AB 文件的接口，但是 Unity 自己并不会将资源的依赖关系管理起来，因此会导致资源的冗余。具体情况请往下看： 我先新</description>
+    </item>
+    
+    <item>
+      <title>Unity UI Text 外文显示单词适配</title>
+      <link>http://www.huangshengbo.com/2021/04/21/TextSplit/</link>
+      <pubDate>Wed, 21 Apr 2021 22:52:55 +0800</pubDate>
+      
+      <guid>http://www.huangshengbo.com/2021/04/21/TextSplit/</guid>
+      <description>问题 Unity UI Text 组件显示外文内容时会发生单词被截断 解决思路 当前句子加上最后一个单词的总宽度大于 Text 控件的宽度时，就将该句的最后一个单词放到下一句显示</description>
+    </item>
+    
+    <item>
+      <title>C#枚举类型和字符串之间的转换</title>
+      <link>http://www.huangshengbo.com/2021/04/21/EnumConVertToString/</link>
+      <pubDate>Wed, 21 Apr 2021 22:51:55 +0800</pubDate>
+      
+      <guid>http://www.huangshengbo.com/2021/04/21/EnumConVertToString/</guid>
+      <description>问题 最近在项目中遇到需要用字符串来获取枚举的值，写下此篇做下总结。 代码实现 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 using System; public enum Test { Aaa = 1, Bbb =</description>
+    </item>
+    
+    <item>
+      <title>在Unity中调用Android粘贴板的方法</title>
+      <link>http://www.huangshengbo.com/2021/04/21/AndroidCopy/</link>
+      <pubDate>Wed, 21 Apr 2021 22:50:16 +0800</pubDate>
+      
+      <guid>http://www.huangshengbo.com/2021/04/21/AndroidCopy/</guid>
+      <description>问题 最近需要实现一个可以在 Unity 打出的 APK 中复制一段文字到 Android 的剪切板中 开发环境 Android Studio 4.0 Gradle 2.10 Unity 5.6.6.f2 Android端 选择新建一个空工程 注意红框内的包名要和</description>
+    </item>
+    
+    <item>
+      <title>PSD To Prefab</title>
+      <link>http://www.huangshengbo.com/2021/04/21/PsdToPrefab/</link>
+      <pubDate>Wed, 21 Apr 2021 22:48:32 +0800</pubDate>
+      
+      <guid>http://www.huangshengbo.com/2021/04/21/PsdToPrefab/</guid>
+      <description>需求来源 最近项目中会涉及大量的 UI 修改，传统的 UI 做法是美术同学出效果图 （PSD）和对应的图素，并用 TexturePacker 工具导成 Unity 中的图集资源，然后程序同学或者美</description>
+    </item>
+    
     <item>
       <title>学习路线</title>
-      <link>http://www.huangshengbo.com/post/2020-04-21-learnpath/</link>
+      <link>http://www.huangshengbo.com/2021/04/21/LearnPath/</link>
       <pubDate>Wed, 21 Apr 2021 22:43:53 +0800</pubDate>
       
-      <guid>http://www.huangshengbo.com/post/2020-04-21-learnpath/</guid>
+      <guid>http://www.huangshengbo.com/2021/04/21/LearnPath/</guid>
       <description>学习内容 1.英语 2.打字 3.计算机基础 英语 学习英语是为了可以较无障碍的阅读外文文章，因为程序员所使用的开发软件大多都是国外所研发，包括很多新</description>
     </item>
     
@@ -26,39 +80,12 @@
     </item>
     
     <item>
-      <title>Psd To Prefab</title>
-      <link>http://www.huangshengbo.com/2020/11/29/PsdToPrefab/</link>
-      <pubDate>Sun, 29 Nov 2020 11:20:19 +0800</pubDate>
+      <title>热更新第二篇</title>
+      <link>http://www.huangshengbo.com/2020/02/06/buildab/</link>
+      <pubDate>Thu, 06 Feb 2020 21:23:17 +0800</pubDate>
       
-      <guid>http://www.huangshengbo.com/2020/11/29/PsdToPrefab/</guid>
-      <description>需求来源 最近项目中会涉及大量的 UI 修改，传统的 UI 做法是美术同学出效果图 （PSD）和对应的图素，并用 TexturePacker 工具导成 Unity 中的图集资源，然后程序同学或者美</description>
-    </item>
-    
-    <item>
-      <title>在 Unity 中可以调用 Android 粘贴板的方法</title>
-      <link>http://www.huangshengbo.com/2020/11/21/AndroidCopy/</link>
-      <pubDate>Sat, 21 Nov 2020 18:48:06 +0800</pubDate>
-      
-      <guid>http://www.huangshengbo.com/2020/11/21/AndroidCopy/</guid>
-      <description>问题 最近需要实现一个可以在 Unity 打出的 APK 中复制一段文字到 Android 的剪切板中 开发环境 Android Studio 4.0 Gradle 2.10 Unity 5.6.6.f2 Android端 选择新建一个空工程 注意红框内的包名要和</description>
-    </item>
-    
-    <item>
-      <title>C# 枚举类型和字符串之间的转换</title>
-      <link>http://www.huangshengbo.com/2020/11/08/EnumConVertToString/</link>
-      <pubDate>Sun, 08 Nov 2020 09:17:17 +0800</pubDate>
-      
-      <guid>http://www.huangshengbo.com/2020/11/08/EnumConVertToString/</guid>
-      <description>问题 最近在项目中遇到需要用字符串来获取枚举的值，写下此篇做下总结。 代码实现 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 using System; public enum Test { Aaa = 1, Bbb =</description>
-    </item>
-    
-    <item>
-      <title>Unity UI Text 外文显示单词适配</title>
-      <link>http://www.huangshengbo.com/2020/11/01/TextSplit/</link>
-      <pubDate>Sun, 01 Nov 2020 21:23:17 +0800</pubDate>
-      
-      <guid>http://www.huangshengbo.com/2020/11/01/TextSplit/</guid>
-      <description>问题 Unity UI Text 组件显示外文内容时会发生单词被截断 解决思路 当前句子加上最后一个单词的总宽度大于 Text 控件的宽度时，就将该句的最后一个单词放到下一句显示</description>
+      <guid>http://www.huangshengbo.com/2020/02/06/buildab/</guid>
+      <description>上篇文章已经可以解决构建 AB 文件的问题，这篇文章我们来解决一下增量打包的问题。 首先我们需要先来考虑一个问题：怎么判断一个文件发生了改动。我的解</description>
     </item>
     
     <item>
@@ -71,21 +98,12 @@
     </item>
     
     <item>
-      <title>学习路线</title>
+      <title>Unity3D 动画文件动作抖动问题</title>
       <link>http://www.huangshengbo.com/2020/01/14/AnimationIssue/</link>
       <pubDate>Tue, 14 Jan 2020 19:57:03 +0800</pubDate>
       
       <guid>http://www.huangshengbo.com/2020/01/14/AnimationIssue/</guid>
       <description>问题 最近项目需要转到pc端做页游开发，项目功能中模型展示的界面都比手游的要大，所以模型的动作中的抖动会更加明显。 原因 动作丢失精度导致 解决方案</description>
-    </item>
-    
-    <item>
-      <title>热更新开篇</title>
-      <link>http://www.huangshengbo.com/2020/01/11/HitUpdate/</link>
-      <pubDate>Sat, 11 Jan 2020 20:32:41 +0800</pubDate>
-      
-      <guid>http://www.huangshengbo.com/2020/01/11/HitUpdate/</guid>
-      <description>为什么要纠结于热更新 Unity 自带的 BuildPipeline.BuildAssetBundles() 就是构建 AB 文件的接口，但是 Unity 自己并不会将资源的依赖关系管理起来，因此会导致资源的冗余。具体情况请往下看： 我先新</description>
     </item>
     
     <item>
@@ -95,15 +113,6 @@
       
       <guid>http://www.huangshengbo.com/2019/12/17/hugo-setup/</guid>
       <description>构建环境 Windows 7 Hugo 0.54.0 Even 2019/09/08 commit: d39d3e443953caea05510b19fdd7a259c71a0ab3 部署我的服务器流程 首先在 GitHub 上注册我的账号名称：huangshengbo5 接着建造我的第一项目：http://huan</description>
-    </item>
-    
-    <item>
-      <title>Mask裁剪UI粒子特效</title>
-      <link>http://www.huangshengbo.com/2019/12/12/LearnRecord/</link>
-      <pubDate>Thu, 12 Dec 2019 17:08:52 +0800</pubDate>
-      
-      <guid>http://www.huangshengbo.com/2019/12/12/LearnRecord/</guid>
-      <description>最近在项目遇到一个问题，加上最近刚看完 Shader 入门到精通 ，所有借此来研究一下这个问题。 核心原理 GPU 每次刷新屏幕时，会重新计算物体上的 Shader 中的顶点着色器</description>
     </item>
     
   </channel>
