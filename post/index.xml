@@ -6,7 +6,16 @@
     <description>Recent content in Posts on 黄圣博的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 12 Apr 2021 19:57:03 +0800</lastBuildDate><atom:link href="http://www.huangshengbo.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 21 Apr 2021 22:43:53 +0800</lastBuildDate><atom:link href="http://www.huangshengbo.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>学习路线</title>
+      <link>http://www.huangshengbo.com/post/2020-04-21-learnpath/</link>
+      <pubDate>Wed, 21 Apr 2021 22:43:53 +0800</pubDate>
+      
+      <guid>http://www.huangshengbo.com/post/2020-04-21-learnpath/</guid>
+      <description>学习内容 1.英语 2.打字 3.计算机基础 英语 学习英语是为了可以较无障碍的阅读外文文章，因为程序员所使用的开发软件大多都是国外所研发，包括很多新</description>
+    </item>
+    
     <item>
       <title>《Unity 游戏优化》阅读笔记</title>
       <link>http://www.huangshengbo.com/2021/04/12/ReadingRecord/</link>
@@ -14,24 +23,6 @@
       
       <guid>http://www.huangshengbo.com/2021/04/12/ReadingRecord/</guid>
       <description>优化核心思想 1.过早的优化是万恶之源。（在可验证的情况下进行优化和重构） 2.逻辑优化的最简洁列表： 验证目标脚本是否出现在场景中。 验证脚本在场</description>
-    </item>
-    
-    <item>
-      <title>学习路线</title>
-      <link>http://www.huangshengbo.com/2020/12/13/LearnPath/</link>
-      <pubDate>Sun, 13 Dec 2020 19:57:03 +0800</pubDate>
-      
-      <guid>http://www.huangshengbo.com/2020/12/13/LearnPath/</guid>
-      <description>学习内容 1.英语 2.打字 3.计算机基础 英语 学习英语是为了可以较无障碍的阅读外文文章，因为程序员所使用的开发软件大多都是国外所研发，包括很多新</description>
-    </item>
-    
-    <item>
-      <title>学习路线</title>
-      <link>http://www.huangshengbo.com/2020/12/13/LearnPath/</link>
-      <pubDate>Sun, 13 Dec 2020 19:57:03 +0800</pubDate>
-      
-      <guid>http://www.huangshengbo.com/2020/12/13/LearnPath/</guid>
-      <description>学习内容 1.英语 2.打字 3.计算机基础 英语 学习英语是为了可以较无障碍的阅读外文文章，因为程序员所使用的开发软件大多都是国外所研发，包括很多新</description>
     </item>
     
     <item>
